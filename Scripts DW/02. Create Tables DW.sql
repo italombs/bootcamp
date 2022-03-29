@@ -1,5 +1,5 @@
 -------------------------------------------
---CRIA TABELA ctrl_security CASO NÃO EXISTA
+--CRIA TABELA ctrl_security CASO Nï¿½O EXISTA
 -------------------------------------------
 IF OBJECT_ID('ctrl_security') IS NULL
 
@@ -14,7 +14,7 @@ CREATE TABLE ctrl_security
 
 
 -----------------------------------------------
---CRIA TABELA d_assistance_area CASO NÃO EXISTA
+--CRIA TABELA d_assistance_area CASO Nï¿½O EXISTA
 -----------------------------------------------
 IF OBJECT_ID('d_assistance_area') IS NULL
 
@@ -31,7 +31,7 @@ CREATE TABLE d_assistance_area
 
 
 ------------------------------------------------
---CRIA TABELA d_business_account CASO NÃO EXISTA
+--CRIA TABELA d_business_account CASO Nï¿½O EXISTA
 ------------------------------------------------
 IF OBJECT_ID('d_business_account') IS NULL
 
@@ -47,7 +47,7 @@ CREATE TABLE d_business_account
 
 
 ------------------------------------------
---CRIA TABELA d_crop_tech CASO NÃO EXISTA
+--CRIA TABELA d_crop_tech CASO Nï¿½O EXISTA
 -----------------------------------------
 IF OBJECT_ID('d_crop_tech') IS NULL
 
@@ -63,7 +63,7 @@ CREATE TABLE d_crop_tech
 
 
 -----------------------------------------
---CRIA TABELA d_crop_type CASO NÃO EXISTA
+--CRIA TABELA d_crop_type CASO Nï¿½O EXISTA
 -----------------------------------------
 IF OBJECT_ID('d_crop_type') IS NULL
 
@@ -79,7 +79,7 @@ CREATE TABLE d_crop_type
 )
 
 ------------------------------------
---CRIA TABELA d_farm CASO NÃO EXISTA
+--CRIA TABELA d_farm CASO Nï¿½O EXISTA
 ------------------------------------
 IF OBJECT_ID('d_farm') IS NULL
 
@@ -97,7 +97,7 @@ CREATE TABLE d_farm
 
 
 -----------------------------------------
---CRIA TABELA d_farm_area CASO NÃO EXISTA
+--CRIA TABELA d_farm_area CASO Nï¿½O EXISTA
 -----------------------------------------
 IF OBJECT_ID('d_farm_area') IS NULL
 
@@ -110,4 +110,69 @@ CREATE TABLE d_farm_area
 ,date_from      DATETIME
 ,date_to        DATETIME
 ,tenant_id      VARCHAR(24)
+)
+
+
+---------------------------------------------
+--CRIA TABELA d_growth_stage CASO Nï¿½O EXISTA
+---------------------------------------------
+IF OBJECT_ID('d_growth_stage') IS NULL
+
+CREATE TABLE d_growth_stage
+(
+ id        INT PRIMARY KEY
+,[type]    VARCHAR(64)
+,[name]    VARCHAR(255)
+,[version] INT
+,date_from DATETIME
+,date_to   DATETIME
+)
+
+
+------------------------------------------
+--CRIA TABELA d_mgmt_item CASO Nï¿½O EXISTA
+------------------------------------------
+IF OBJECT_ID('d_mgmt_item') IS NULL
+
+CREATE TABLE d_mgmt_item
+(
+ id              INT PRIMARY KEY
+,scientific_name VARCHAR(64)
+,[name]          VARCHAR(255)
+,[version]       INT
+,date_from       DATETIME
+,date_to         DATETIME 
+)
+
+
+---------------------------------------
+--CRIA TABELA d_person CASO Nï¿½O EXISTA
+---------------------------------------
+IF OBJECT_ID('d_person') IS NULL
+
+CREATE TABLE d_person
+(
+ id           INT PRIMARY KEY
+,email        VARCHAR(255)
+,[name]       VARCHAR(255)
+,[version]    INT
+,date_from    DATETIME
+,date_to      DATETIME
+,profile_name VARCHAR(20)
+,[uid]        VARCHAR(20)
+,tenant_id    VARCHAR(24)
+)
+
+---------------------------------------
+--CRIA TABELA d_ticket CASO Nï¿½O EXISTA
+---------------------------------------
+IF OBJECT_ID('d_ticket') IS NULL
+
+CREATE TABLE d_ticket
+(
+ id        INT PRIMARY KEY
+,[type]    VARCHAR(64)
+,[version] INT
+,date_from DATETIME
+,date_to   DATETIME
 )
