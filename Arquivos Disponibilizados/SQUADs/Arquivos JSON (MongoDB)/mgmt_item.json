@@ -1,0 +1,927 @@
+[
+    {
+        "_id": {
+            "$oid": "5eb2ece2b187a8f7b9daea72"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "bidens spp",
+        "description": {
+            "pt_BR": "-------------",
+            "en_US": "--------------"
+        },
+        "name": {
+            "pt_BR": "Pic\u00e3o preto",
+            "en_US": "Beggarticks"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bbd"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "conyza spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Horseweed",
+            "pt_BR": "Buva"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bbe"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "lolium multiflorum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Italian ryegrass",
+            "pt_BR": "Azev\u00e9m"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bbf"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "brachiaria spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Spreading liverseed grass",
+            "pt_BR": "Capim braqui\u00e1ria"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bc0"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "portulaca oleracea",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Verdolaga",
+            "pt_BR": "Beldroega"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bc1"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "sorghum spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Johnson grass",
+            "pt_BR": "Capim massambar\u00e1"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bc2"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "alternanthera spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Brazilian Joyweed",
+            "pt_BR": "Apaga fogo"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bc3"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "cenchrus echinatus",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Southern sandbur",
+            "pt_BR": "Capim carrapicho"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bc5"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "echinochloa spp",
+        "description": {
+            "pt_BR": "-------------",
+            "en_US": "----"
+        },
+        "name": {
+            "pt_BR": "Capim arroz",
+            "en_US": "Barnyard grass"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bcd"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "brachiaria plantaginea",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Signalgrass",
+            "pt_BR": "Capim marmelada"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bd1"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "raphanus spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Radish weed",
+            "pt_BR": "Nabi\u00e7a"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bd4"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "digitaria insularis",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Sourgrass",
+            "pt_BR": "Capim amargoso"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bd7"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "amaranthus spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Pigweed",
+            "pt_BR": "Caruru"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bda"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "eleusine indica",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Indian goosegrass",
+            "pt_BR": "P\u00e9 de galinha"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bdb"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "digitaria spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Jamaican crabgrass",
+            "pt_BR": "Capim colch\u0103o"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bdc"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "sida spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Cuba jute",
+            "pt_BR": "Guanxuma"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bdd"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "emilia sonchifolia",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "True milkweed",
+            "pt_BR": "Falsa serralha"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bde"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "eupatorium spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Boneset",
+            "pt_BR": "Cambar\u00e1"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99be1"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "euphorbia spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Milkweed",
+            "pt_BR": "Leiteiro"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99be2"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "senna spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Java bean",
+            "pt_BR": "Fedegoso"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99be6"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "tridax procumbens",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Coat buttons",
+            "pt_BR": "Erva de touro"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99be8"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "acanthospermum spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Bristly starbur",
+            "pt_BR": "Carrapicho de carneiro"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bef"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "cynodon dactylon",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Bermuda grass",
+            "pt_BR": "Grama seda"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5eb320a1b187a8f7b9e99bf1"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "commelina spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Dayflower",
+            "pt_BR": "Trapoeraba"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5f31c8f49c5588b9ec2abea2"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "ipomoea spp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Morning glory",
+            "pt_BR": "Corda de viola"
+        },
+        "trained": true
+    },
+    {
+        "_id": {
+            "$oid": "5fc25b25f9fc9fd5d5ac3818"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "zea mays",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Corn",
+            "pt_BR": "Milho"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "5fc25b25f9fc9fd5d5ac3819"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "gossypium hirsutum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Cotton",
+            "pt_BR": "Algod\u00e3o"
+        },
+        "trained": false
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb41"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "bidens ssp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Beggarticks",
+            "pt_BR": "Pic\u00e3o preto"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb43"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "urochloa decumbens",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Spreading liverseed grass",
+            "pt_BR": "Capim braquiaria"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb44"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "sorghum halepense",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Johnson grass",
+            "pt_BR": "Capim massambar\u00e1"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb45"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "alternanthera tenela",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Brazilian Joyweed",
+            "pt_BR": "Apaga fogo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb46"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "cyperus rotundus",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Nut grass",
+            "pt_BR": "Tiririca"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb47"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "echinochloa crusgalli",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Barnyard grass",
+            "pt_BR": "Capim arroz"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb4f"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "ipomoea ssp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Morning glory",
+            "pt_BR": "Corda de viola"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb50"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "desmodium tortuosum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Beggar weed",
+            "pt_BR": "Carrapicho bei\u00e7o de boi"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb51"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "nicandra physaloides",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Shoo fly plant",
+            "pt_BR": "Jo\u00e1 de capote"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb52"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "panicum maximum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Panic grass",
+            "pt_BR": "Capim momba\u00e7a"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb53"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "acanthospermum australi",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Paraguayan starburr",
+            "pt_BR": "Carrapicho rasteiro"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb54"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "phyllanthus niruri",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Gale of the wind stonebreaker",
+            "pt_BR": "Quebra pedra"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb55"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "rhynchelitrum repens",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Natal grass",
+            "pt_BR": "Capim favorito"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb56"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "urochloa plantaginea",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Plantain signalgrass",
+            "pt_BR": "Capim papu\u00e3"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb57"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "leonotis nepetaefolia",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Christmas candlestick",
+            "pt_BR": "Cord\u00e3o de frade"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb58"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "solanum americanum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "American black nightshade",
+            "pt_BR": "Maria pretinha"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb59"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "raphanus raphanistrum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Radish weed",
+            "pt_BR": "Nabi\u00e7a"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5a"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "pennisetum setosum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Mission Grass",
+            "pt_BR": "Capim oferecido cust\u00f3dio"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5b"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "richardia brasiliensis",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Tropical mexican clover",
+            "pt_BR": "Poaia branca"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5c"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "setaria viridis",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Foxtail",
+            "pt_BR": "Capim rabo de raposa"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5d"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "pennisetum glaucum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Pearl millet",
+            "pt_BR": "Milheto"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5e"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "digitaria horizontalis",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Jamaican crabgrass",
+            "pt_BR": "Capim colch\u0103o"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb5f"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "sida ssp",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Cuba jute",
+            "pt_BR": "Guanxuma"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb60"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "eupathorium paucifolorum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Boneset",
+            "pt_BR": "Cambar\u00e1"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb61"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "euphorbia heterophylla",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Milkweed",
+            "pt_BR": "Leiteiro"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb62"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "senna obtusifolia",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Java bean",
+            "pt_BR": "Fedegoso"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb63"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "spermacoce latifolia",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Oval leaf false buttonweed",
+            "pt_BR": "Erva quente"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb64"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "acanthospermum hispidum",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Bristly starbur",
+            "pt_BR": "Carrapicho de carneiro"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb66"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "brachiaria decumbens",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Surinam grass",
+            "pt_BR": "Capim braqui\u00e1ria"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb68"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "spermacoce verticilata",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Shrubby false buttonweed",
+            "pt_BR": "Vassourinha de bot\u00e3o"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb69"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "ageratum conyzoides",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Billygoat weed",
+            "pt_BR": "Mentrasto"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb6a"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "parthenium hysterophorus",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Parthenium weed",
+            "pt_BR": "Losna branca"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621a20bc9ab9390aaee5cb6b"
+        },
+        "mgmt_type": "weed",
+        "scientific_name": "commelina benghalensis",
+        "active": true,
+        "description": {
+            "pt_BR": "-------------"
+        },
+        "name": {
+            "en_US": "Dayflower",
+            "pt_BR": "Trapoeraba"
+        }
+    }
+]

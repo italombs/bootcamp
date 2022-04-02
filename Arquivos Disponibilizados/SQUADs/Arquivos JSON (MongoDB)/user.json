@@ -1,0 +1,2891 @@
+[
+    {
+        "_id": {
+            "$oid": "5ec5874ef146ba28c0633a5b"
+        },
+        "name": "ksr RIOS CONSULTOR AG",
+        "uid": "27964956981",
+        "email": "ksrr@gmail.com",
+        "powerbi_account": "ksrr.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4adm": {
+                "permission": "basic"
+            },
+            "im4agin": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "data": {
+            "avatar": "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",
+            "fcmKey": "dZ9Td-JfSUWOJQ2pS-9_Yd:APA91bH5RZ68LZFH2PIKu8eiyTcr7XSwzMI0oYgdykrQeW76qDFqhdsEWBCXChqAG4HbaE7fzhR_a5mY5C0N6TBeSvQoyFMBkNfyQgoLCZh1RZdWUS_VKhMKVJms0PGh25Xvo6MNV93C",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "name": "CONSULTOR 1 AG.IN",
+        "uid": "44110377854",
+        "email": "ksrr@yahoo.com.br",
+        "powerbi_account": "44110377854@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "data": {
+            "fcmKey": "fPQyC4SrQcCulG3P6q96DW:APA91bHrBwTBe_oSbOay_gNeeAxCQcTtOy1TZlWcuz_XieYB9h7nw_isV8bsgqMRnRzhVrt_xkfgCkuR1x3GmKbueSFPJdM5Krz3pz8wHVOezy2V-h8z2A82p2bMg1QGQ8QBUuKAcb7e",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "5f92164ff673d7db8138a30b"
+        },
+        "name": "WARLES",
+        "uid": "72159437476",
+        "email": "warlleso@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "611e6a6b710ba74069a92699"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4agin": {
+                "permission": "basic",
+                "acls": {
+                    "CHANGECLASS": true
+                }
+            }
+        },
+        "data": {
+            "avatar": "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",
+            "fcmKey": "6e923a60-d1ce-4ecf-a6b8-57a9c1223426",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "5f95e721ab8edb7d2b3e2024"
+        },
+        "name": "XX",
+        "uid": "37482006923",
+        "email": "xx@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "farm_id": {
+            "$oid": "612a83324042d0ecd14ef205"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fa296acf187cd6dfe3bd6be"
+        },
+        "name": "GESTOR SENAR",
+        "email": "senar@senar.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "5fa296daf187cd6dfe3bd6c0"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "60005520924",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fa296cbf187cd6dfe3bd6bf"
+        },
+        "name": "JOSE MARIA",
+        "uid": "47616221645",
+        "email": "ksrr@hotmail.com",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "farm_id": {
+            "$oid": "604818052060b7465875b4c1"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "adfaf",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "5fa29706f187cd6dfe3bd6c1"
+        },
+        "active": true,
+        "email": "consultor@senar.com.br",
+        "name": "CONSULTOR SENAR",
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "business_account_id": {
+            "$oid": "5fa296daf187cd6dfe3bd6c0"
+        },
+        "uid": "45504327644",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fd2a4257b9d04f3422883a4"
+        },
+        "name": "ksr RIOS",
+        "email": "ksrrx@hotmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "5f1af73406fbc249bc261368"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "89232161354",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fd3745f882a4aca02888a1c"
+        },
+        "name": "Warleso",
+        "uid": "32052603840",
+        "email": "r@yopmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fd37b67882a4aca02888a1d"
+        },
+        "name": "Warleson",
+        "uid": "68099649591",
+        "email": "g@yopmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "farm_id": {
+            "$oid": "612a809c4042d0ecd14ef14a"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fd38a46882a4aca02888a1e"
+        },
+        "name": "warleson",
+        "email": "warlles@icloud.com",
+        "user_type_id": {
+            "$oid": "5e335d183e8d406769286570"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "612a89264b402ad82f96ff94"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "31233851080",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480c042060b7465875acd9"
+        },
+        "name": "CONSULTOR 1",
+        "email": "consultor1@gmail.com",
+        "powerbi_account": "consultor1.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "uid": "07173839629",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "name": "CONSULTOR 2",
+        "email": "consultor2@gmail.com",
+        "powerbi_account": "consultor2.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "87442594255",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480f352060b7465875ad6d"
+        },
+        "name": "CONSULTOR 3",
+        "email": "consultor3@gmail.com",
+        "powerbi_account": "consultor3.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "12770729578",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480f572060b7465875ad9f"
+        },
+        "name": "CONSULTOR 4",
+        "email": "consultor4@gmail.com",
+        "powerbi_account": "consultor4.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "21397723181",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480f6b2060b7465875add1"
+        },
+        "name": "CONSULTOR 5",
+        "email": "consultor5@gmail.com",
+        "powerbi_account": "consultor5.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "93929647303",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480f942060b7465875ae1a"
+        },
+        "name": "GESTOR 1",
+        "email": "gestor1@gmail.com",
+        "powerbi_account": "gestor1.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "uid": "99977764107",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480fa12060b7465875ae4c"
+        },
+        "name": "GESTOR 2",
+        "email": "gestor2@gmail.com",
+        "powerbi_account": "gestor2.gmail@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "91578331412",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480fb02060b7465875ae7e"
+        },
+        "name": "GESTOR 3",
+        "email": "gestor3@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "69485332211",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60480fc52060b7465875aeb0"
+        },
+        "name": "GESTOR 4",
+        "uid": "67895070517",
+        "email": "gestor4@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812c02060b7465875af14"
+        },
+        "name": "FARMER 1",
+        "uid": "96611504354",
+        "email": "farmer1@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "farm_id": {
+            "$oid": "6060c307b771a322b4dabb7d"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812ca2060b7465875af46"
+        },
+        "name": "FARMER 2",
+        "uid": "79435898319",
+        "email": "farmer2@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "farm_id": {
+            "$oid": "604817d02060b7465875b3d9"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812d72060b7465875af78"
+        },
+        "name": "FARMER 3",
+        "uid": "18501916030",
+        "email": "farmer3@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "farm_id": {
+            "$oid": "604817e82060b7465875b450"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812e12060b7465875afaa"
+        },
+        "name": "FARMER 4",
+        "uid": "33231004500",
+        "email": "farmer4@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "61b889e3f638c620596dc3a6"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812f02060b7465875afdc"
+        },
+        "name": "FARMER 5",
+        "uid": "22154713360",
+        "email": "farmer5@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "farm_id": {
+            "$oid": "604818232060b7465875b532"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604812fd2060b7465875b00e"
+        },
+        "name": "FARMER 6",
+        "uid": "35861343551",
+        "email": "farmer6@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "farm_id": {
+            "$oid": "6048183d2060b7465875b5a3"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604813092060b7465875b040"
+        },
+        "name": "FARMER 7",
+        "uid": "73298278785",
+        "email": "farmer7@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "farm_id": {
+            "$oid": "604818592060b7465875b614"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604813182060b7465875b072"
+        },
+        "name": "FARMER 8",
+        "uid": "03079915631",
+        "email": "farmer8@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "farm_id": {
+            "$oid": "604818772060b7465875b685"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "adfaf",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6048133a2060b7465875b0a4"
+        },
+        "name": "FARMER9",
+        "email": "farmer9@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "farm_id": {
+            "$oid": "6048189a2060b7465875b6e4"
+        },
+        "active": true,
+        "uid": "10001059114",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604813482060b7465875b0d6"
+        },
+        "name": "FARMER 10",
+        "uid": "62751152031",
+        "email": "farmer10@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "farm_id": {
+            "$oid": "604818fc2060b7465875b869"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "name": "CONSULTOR 6",
+        "uid": "55162382507",
+        "email": "consultor6@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6048174a2060b7465875b29a"
+        },
+        "name": "CONSULTOR 7",
+        "uid": "76829175399",
+        "email": "consultor7@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604cc209a1712ddb59ed5c9e"
+        },
+        "name": "JOSE",
+        "email": "leandro_lo@hotmail.com",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "access": {
+            "im4": {
+                "permission": "advanced"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "69208693309",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604f5cd0b250963d78a7223b"
+        },
+        "name": "ROGERIO DA SILVA",
+        "email": "rogerio@silva.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "611e6d2f710ba74069a92804"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "67714759569",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6050f17e305e7f346c677e69"
+        },
+        "name": "MARIA CONCEICAO SILVA",
+        "email": "mariaconceicao@silva.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "611e7885242eb9e88b2d294a"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "98400546865",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6053b9d81cfc4ee8b9921a09"
+        },
+        "name": "JOELMA COSTA",
+        "uid": "06990988401",
+        "email": "joelma@costa.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6053ba441cfc4ee8b9921a0a"
+        },
+        "name": "TEREZA CRISTINA",
+        "email": "tereza@cristina.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "22588315208",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6053bb241cfc4ee8b9921a0b"
+        },
+        "name": "OTTO SILVA",
+        "email": "otto@silva.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "access": {
+            "im4adm": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "34019701350",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6053ca1656a21688c13f22ff"
+        },
+        "name": "MARTA PEREIRA A",
+        "email": "marta@pereira.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "612448fba55b2bc0bf313e17"
+        },
+        "access": {
+            "im4agin": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "04417659630",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6060c723fbc73781385b7026"
+        },
+        "name": "CAROLINE",
+        "uid": "44405271674",
+        "email": "c.eng@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4adm": {
+                "permission": "advanced"
+            },
+            "im4agin": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "data": {
+            "fcmKey": "dpkA-19kUAWHxTjkERyO7B:APA91bEvJT8eRqfjVT9VtXUzXZ794Nw2SOkxoRUM1FzdDCDcy8ruSbgHSNgphDG0lR_ZjxQ1M5jEJLhb0l3u5ZRpkZThILAwphh-c6wsZzgUQmSB_3WHCbFlp_jQUNQNne8HFB6EXJYo",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "606eee08b4c7eb0369fca88c"
+        },
+        "name": "MARCELO",
+        "uid": "83312081700",
+        "email": "bassideva@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "60232d6de4cd0f37be4ad6bb"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "avatar": "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",
+            "fcmKey": "eKNzGwpNRo2Is2XSZWfiWH:APA91bERUuoDD7hKpbKohK0tpURB3ShVrNvcclCmqpCJL08eiHFZcc6470rP7q7J2SxbWgOHHvGFGGls6ftC8ayvHSqMvAaAkwgTV0lup2npRXEGWT4gYwHmfXBQyKHU2jSrDav5IpDF",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "60831c9c4aab1deb1c4f353d"
+        },
+        "name": "Marcelo teste",
+        "email": "marcelo@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "611e82366e059b28cd093bea"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "31813000808",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60cde582cbc71950c9a450e1"
+        },
+        "name": "FARMER B.SUMARE",
+        "email": "farmer1@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "60cde5e92d658a44ac2145fa"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            },
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "avatar": "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",
+            "fcmKey": "",
+            "timezone": "America/Sao_Paulo"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "uid": "57246214100"
+    },
+    {
+        "_id": {
+            "$oid": "60f8386782de290649e06bd3"
+        },
+        "name": "FARMER F. NYCOLLE",
+        "uid": "70441384978",
+        "email": "farmer2@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "5f935ca29991b96eea4b3f59"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "fCoIRYuiQOGWh751oPNqXz:APA91bGOL8dm-wjgrJ9lNpqgphMMXq-DC3YMhYf-smcaNTAzcgjCrlr3VIdLWiRRXN-XA3b-3JrZGFAz_Euu8P7_oS-_MK_BDCKqEERns6NL40x19ooGAIASXViAznJ2NmXyt9qk0NVK",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "60f838ac82de290649e06bd4"
+        },
+        "name": "CONSULTOR 2 AN",
+        "uid": "42295717558",
+        "email": "consultor2@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "dodASdhGQJiH9mUo4WrYgL:APA91bHifg7PhCIMyqvMi6IPmMVbAJPsY7_thcWB4DE-_b2BDBptaHOfjRFTC0r-n0xwXgmKITPnlWminvRCj1oguoe_Jmfm6D1TknTFM2dcLH5pEcDI_GWpahBrQfUhvjhcLluUTcrN",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6111d46ffd58046cfd537463"
+        },
+        "name": "CABRAL",
+        "email": "cabral.h@hotmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "612d3ce6451086f0ef6d7eb9"
+        },
+        "access": {
+            "im4agin": {
+                "permission": "advanced"
+            },
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "32222028930",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6111d54ffd58046cfd537464"
+        },
+        "name": "MARCOS",
+        "uid": "87818849076",
+        "email": "marc10@yahoo.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "farm_id": {
+            "$oid": "61127a138b0ce5ddd06e77e1"
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "61128ec2a77f9d108c90a8e2"
+        },
+        "name": "AAAAB",
+        "uid": "62758384183",
+        "email": "xxxx.aaaa.bbbb@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "6140b8eff150fa4840001f13"
+        },
+        "active": false,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612752df483fe5f06ab0d723"
+        },
+        "name": "JECSON",
+        "email": "jecson01@email.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": false,
+        "uid": "97159255704",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61277d9d113e81b2b41c2dba"
+        },
+        "name": "USUARIO JECSON",
+        "uid": "07840983014",
+        "email": "usuarioj@email.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612783947b06f880f80be005"
+        },
+        "name": "farmer 3 alagoas pereira prado ramos",
+        "email": "farmer3@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "farm_id": {
+            "$oid": "612a90cbe50627934923fb57"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "avatar": "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",
+            "fcmKey": "eJ1Xw8bESROyx0ZgnFU68r:APA91bEgAbhBmSADWkxprmrk8C7iXOwDh0FYqusj2fpoFc0g0dVUMdA3RFgmxazyYQKZsitPTQPoUGeQpkH4ECHxQ8zIljQ8g-nD7iZPNhbFzZ2m1u7fzDbV58kTaBy4mxIeyzLu9_B6",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true,
+        "uid": "70482949902"
+    },
+    {
+        "_id": {
+            "$oid": "6128e65dda0f53712c249695"
+        },
+        "name": "GESTOR NORMAL",
+        "uid": "41395452407",
+        "email": "gestor.normal@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6128e685da0f53712c249696"
+        },
+        "name": "GESTOR ADMIN",
+        "uid": "05141991997",
+        "email": "gestor.admin@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "name": "CONSULTOR NORMAL",
+        "email": "consultor.normal@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            },
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "fcmKey": "fvQHGnV4QDaNWZNEpj-c11:APA91bGt4QX7JzC0474rBh8uwu6rkx6mPTQVaofog0qnX5442rUEaEthzrFBJO11qhS5XNpn9XSbfGt99uK-x5gurP0tfT8JA_JeBFG_aSkjxrrhc7EPFkW2hVlyacTEw76tnD2SxQ1a",
+            "timezone": "America/Sao_Paulo"
+        },
+        "uid": "26396972182"
+    },
+    {
+        "_id": {
+            "$oid": "61294259a490bd7301def0e5"
+        },
+        "name": "TESTE CAROL 1",
+        "email": "carol@teste.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": false,
+        "uid": "24461698300",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6129444ab96e1a1c75acbdb4"
+        },
+        "name": "TESTE CAROL",
+        "email": "carolsquad@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "6129482a0d47638d2924a247"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "64384299613",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612f647ee1f0ee4b5a638e40"
+        },
+        "name": "xxx",
+        "email": "xx@xx.cim.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "6140b8a8f150fa4840001e6e"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "uid": "62892580790",
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6139f8a068bc3e118358fd06"
+        },
+        "name": "USUARIO GESTOR",
+        "uid": "15620192520",
+        "email": "gestor_user@email.com",
+        "user_type_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "61219d89c453a71b05386c2a"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "614888ddf5123d14db6bcf05"
+        },
+        "name": "PRODUTOR SANDBOX",
+        "uid": "25656522830",
+        "email": "produtor.sandbox@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "farm_id": {
+            "$oid": "614889b6a61283de7b107c7f"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "fboQUODRSI2GO7XqB1Ixu8:APA91bH1h3Joqlx_sPLen1xej6E1WcBVl-RS7vlboV6HGVC2a-YuLQ99DwrU8A6CUZ8s6Z1HxfozbuTFRN8U7jufUhN8f_nfn0SCMFqt0OP_i6tTn8r6lWjFhQtVfbSTQCJ78L80ilsz",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "name": "CONSULTOR SANDBOX",
+        "uid": "41628134429",
+        "email": "consultor.sandbox@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "",
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "61488942f5123d14db6bcf07"
+        },
+        "name": "GESTOR.ADMIN.SANDBOX",
+        "uid": "18180322602",
+        "email": "gestor.admin.sandbox@agroneural.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "access": {
+            "im4adm": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6183ef8c097abe49d1362d1d"
+        },
+        "name": "TESTE GESTOR UID",
+        "uid": "05493025060",
+        "email": "testegestoruid@teste.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "6185345b93281f5867b58a76"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61852b47ecb055d789ca6491"
+        },
+        "name": "TESTE CONSULTOR UID",
+        "uid": "57188832200",
+        "email": "teste.consultor123@teste.com",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61852bccecb055d789ca6492"
+        },
+        "name": "TESTE CONSULTOR FUNCIONALIDADE",
+        "uid": "71847802214",
+        "email": "teste.consultor@teste.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61852e1aecb055d789ca6493"
+        },
+        "name": "BRUNO TESTE",
+        "uid": "017.455.478-86",
+        "email": "bruno@squad.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "618907710cc146d766da8d20"
+        },
+        "name": "TESTE UID NOVO",
+        "uid": "36296729731",
+        "email": "testeuid.nome@teste.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "access": {
+            "im4web": {
+                "permission": "advanced"
+            },
+            "im4": {
+                "permission": "advanced"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61a4da4ef843910f313a6011"
+        },
+        "name": "TESTE NEW USER 03",
+        "uid": "483.603.683-68",
+        "email": "teste03.squad@squad.com.br",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "access": {
+            "im4adm": {
+                "permission": "basic"
+            },
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61a9f017c3012d07a7a877e1"
+        },
+        "name": "ksr GESTOR AG",
+        "uid": "85316369149",
+        "email": "ksr.rios@agroneural.com",
+        "user_type_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "profile_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "business_account_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "access": {
+            "im4web": {
+                "permission": "basic"
+            }
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61bceba0039b88b436e6971e"
+        },
+        "uid": "03536293913",
+        "name": "MARCELO",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "marcelo.g@hotmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61bcf38feff615f8879cd459"
+        },
+        "uid": "41426471998",
+        "name": "MARCELO",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "suelen.psi@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61c2391df277b4e3a745d704"
+        },
+        "uid": "48359638063",
+        "name": "MARCELO",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "bassiinformatica@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "fcmKey": "cB55-7zBQpeSl4h8VrAO5Z:APA91bHKSBHiYzLB49lf_fEkxq7G_r7BypzLAXqoLa85rWtkNP6xktdpzhcVaBw5Dq18mSdccw5Lt4X90adnooPYAkMX_x15Hqvf-xyf2GsxRY-zgh1355PM1sRDcOPSpx4b87waI6Wj",
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f7d37359c0e8118e61e232"
+        },
+        "name": "TESTE 01 TZ",
+        "uid": "23353725997",
+        "email": "teste.01.tz@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f7d859fd2889cf86e570ce"
+        },
+        "name": "TESTE 02 TZ",
+        "uid": "36572033201",
+        "email": "teste.02.tz@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "farm_id": {
+            "$oid": "622698c4d324c06d6e00acbd"
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "61f7d9dbfd2889cf86e570cf"
+        },
+        "name": "TESTE 03 TZ",
+        "uid": "42182387404",
+        "email": "teste.03.tz@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "61f7dbc6fd2889cf86e570d0"
+        },
+        "name": "TESTE 05 TZ",
+        "uid": "60416429246",
+        "email": "teste.05.tz@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f7df40fd2889cf86e570da"
+        },
+        "uid": "13888943434",
+        "name": "TESTE 06 TZ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "teste.06.tz@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f7f1115806a08e2a606fb1"
+        },
+        "name": "TESTE 07 TZ",
+        "uid": "60728784580",
+        "email": "teste.02.tz@testes.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "61f7f4fe8ddb8fa8a6df2d41"
+        },
+        "name": "TESTE 08 TZ",
+        "uid": "73091758834",
+        "email": "teste.08.tz@teste.com",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6210d99155f731b59bf85583"
+        },
+        "uid": "49993790079",
+        "name": "TESTE CADASTRO IM4",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim4@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e38b2f6c148403de347d"
+        },
+        "uid": "87792194035",
+        "name": "TESTE 02",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim42@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e6952f6c148403de347e"
+        },
+        "uid": "26199459091",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim43@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e7272f6c148403de347f"
+        },
+        "uid": "52918895008",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim44@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e7952f6c148403de3480"
+        },
+        "uid": "08839730060",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim45@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e7cc2f6c148403de3481"
+        },
+        "uid": "21035203006",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim46@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210e98e2f6c148403de3482"
+        },
+        "uid": "23092611063",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim47@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ea162f6c148403de3483"
+        },
+        "uid": "92353625045",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim4t@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210eae42f6c148403de3484"
+        },
+        "uid": "06831267092",
+        "name": "TESTE",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testecadastroim4tj@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ebb52f6c148403de3485"
+        },
+        "uid": "28363121061",
+        "name": "GGHHJJJJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "ggggggg@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ecb62f6c148403de3486"
+        },
+        "uid": "78535125035",
+        "name": "GGHHJJJJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gghjbh@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ed482f6c148403de3487"
+        },
+        "uid": "27672191063",
+        "name": "GGHHJJJJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gghjbhmmmmm@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210edff2f6c148403de3488"
+        },
+        "uid": "42878145097",
+        "name": "GGHHJJJJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gghjbhmmmmmiii@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ee702f6c148403de3489"
+        },
+        "uid": "19912003071",
+        "name": "GHJJ",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "hgghghbfrews@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210ef4d2f6c148403de348a"
+        },
+        "uid": "27818592067",
+        "name": "KKPPIHG",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fggjoooo@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210f6d12f6c148403de348b"
+        },
+        "uid": "48964068009",
+        "name": "GGHJ",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "ccvbb@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210f76d2f6c148403de348c"
+        },
+        "uid": "79310915072",
+        "name": "JKJHGGFF",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gjbnnh@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210f7b92f6c148403de348d"
+        },
+        "uid": "38875878048",
+        "name": "JJJHH",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fggy@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210f86d2f6c148403de348e"
+        },
+        "uid": "76719374010",
+        "name": "HJJHHG",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "ghhjjh@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210f9ca2f6c148403de348f"
+        },
+        "name": "GGHBB",
+        "uid": "78627678022",
+        "email": "tghg@gmail.com",
+        "user_type_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "farm_id": {
+            "$oid": "622698c1d324c06d6e00acab"
+        },
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "6210fa422f6c148403de3490"
+        },
+        "uid": "86085153007",
+        "name": "FGVVHHFVV",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "ccvvgggg@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210faa02f6c148403de3491"
+        },
+        "uid": "09560175092",
+        "name": "GHJJJJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "tghhhgf@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210fb202f6c148403de3492"
+        },
+        "uid": "93830230079",
+        "name": "GGHHVF",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "ghcgbxsa@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210fbc22f6c148403de3493"
+        },
+        "uid": "21478377097",
+        "name": "GGHHBBJHJ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gghhreeyihh@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210fc202f6c148403de3494"
+        },
+        "uid": "08777762029",
+        "name": "GJJGFF",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "gfty@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6210fc8a2f6c148403de3495"
+        },
+        "uid": "61229622012",
+        "name": "HBCFNK",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fgfrchhj@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621100902f6c148403de3496"
+        },
+        "uid": "60120020092",
+        "name": "GUGGENHEIM GR FJJH",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fhjuyttesfg@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621121974404c48b2d04fe95"
+        },
+        "uid": "65086017092",
+        "name": "MARCELO",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "teste@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621123904404c48b2d04fe96"
+        },
+        "uid": "98211217058",
+        "name": "MARCELO",
+        "user_type_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "testegggrrrr@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6211256c4404c48b2d04fe97"
+        },
+        "uid": "92485211000",
+        "name": "GFFDGFSGFDGSDGSDF",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "validaragora@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6211268b4404c48b2d04fe98"
+        },
+        "uid": "64990865090",
+        "name": "EU DENOVO",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "meuteste@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621129554404c48b2d04fe99"
+        },
+        "uid": "26646783020",
+        "name": "YUYTURTYUYTUTYRRTY",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fdsfads@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "621129b84404c48b2d04fe9a"
+        },
+        "uid": "43184526038",
+        "name": "YUYTURTYUYTUTYRRTY",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "fdsfa34543@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "62112a5e4404c48b2d04fe9b"
+        },
+        "uid": "45108968086",
+        "name": "JAHDJKFDSHFKDAZMHKZ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "dhfauhfuidyoz78987978@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "62112aba4404c48b2d04fe9c"
+        },
+        "uid": "91305159047",
+        "name": "JAHDJKFDSHFKDAZMHKZ",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "dhfauhfuidyoz78987978fgfgf@gmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "62112b364404c48b2d04fe9d"
+        },
+        "uid": "70487580079",
+        "name": "GDFSGFDSDFSG",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "hndjkdhjhuyehiurewh@hotmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "62112b8b4404c48b2d04fe9e"
+        },
+        "uid": "16379479090",
+        "name": "GDFSGFDSDFSG",
+        "user_type_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "profile_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "active": true,
+        "email": "hndjkdhjhuyehiure5656456wh@hotmail.com",
+        "access": {
+            "im4": {
+                "permission": "basic"
+            }
+        },
+        "data": {
+            "timezone": "America/Sao_Paulo"
+        }
+    }
+]

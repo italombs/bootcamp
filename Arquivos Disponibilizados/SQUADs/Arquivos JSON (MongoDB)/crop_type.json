@@ -1,0 +1,50 @@
+[
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412ec2"
+        },
+        "type": "corn",
+        "active": true,
+        "name": {
+            "en_US": "Corn",
+            "pt_BR": "Milho"
+        },
+        "order": 2
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412ec1"
+        },
+        "type": "soybean",
+        "active": true,
+        "name": {
+            "en_US": "Soybean",
+            "pt_BR": "Soja"
+        },
+        "order": 1
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412ec3"
+        },
+        "type": "cotton",
+        "active": true,
+        "name": {
+            "en_US": "Cotton",
+            "pt_BR": "Algod\u00e3o"
+        },
+        "order": 3
+    },
+    {
+        "_id": {
+            "$oid": "616ad223221edecb929dc448"
+        },
+        "type": "coffee",
+        "active": true,
+        "name": {
+            "en_US": "Coffee",
+            "pt_BR": "Caf\u00e9"
+        },
+        "order": 4
+    }
+]

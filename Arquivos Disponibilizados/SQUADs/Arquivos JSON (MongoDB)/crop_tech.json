@@ -1,0 +1,26 @@
+[
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412eab"
+        },
+        "type": "conventional",
+        "active": true,
+        "name": {
+            "en_US": "Conventional plant",
+            "pt_BR": "Convencional"
+        },
+        "order": 1
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412eac"
+        },
+        "type": "bt_rr",
+        "active": true,
+        "name": {
+            "en_US": "BT / RR",
+            "pt_BR": "BT / RR"
+        },
+        "order": 2
+    }
+]

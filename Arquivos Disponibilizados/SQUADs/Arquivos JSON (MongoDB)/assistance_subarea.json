@@ -1,0 +1,278 @@
+[
+    {
+        "_id": {
+            "$oid": "611f8b8b21e495206eddce3b"
+        },
+        "name": {
+            "pt_BR": "Plantas daninhas"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f877e21e495206eddce34"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8b8b21e495206eddce3c"
+        },
+        "name": {
+            "pt_BR": "Pragas"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f877e21e495206eddce34"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8b8b21e495206eddce3d"
+        },
+        "name": {
+            "pt_BR": "Doen\u00e7as"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f877e21e495206eddce34"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8b8b21e495206eddce3e"
+        },
+        "name": {
+            "pt_BR": "Fertilidade"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f877e21e495206eddce34"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8ba421e495206eddce3f"
+        },
+        "name": {
+            "pt_BR": "Formul\u00e1rios"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f878f21e495206eddce35"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8ba421e495206eddce40"
+        },
+        "name": {
+            "pt_BR": "Processo"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f878f21e495206eddce35"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8ba421e495206eddce41"
+        },
+        "name": {
+            "pt_BR": "Solicita\u00e7\u00e3o"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f878f21e495206eddce35"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bb421e495206eddce42"
+        },
+        "name": {
+            "pt_BR": "Programa de mulheres"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f879f21e495206eddce36"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bb421e495206eddce43"
+        },
+        "name": {
+            "pt_BR": "Adolescentes"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f879f21e495206eddce36"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bb421e495206eddce44"
+        },
+        "name": {
+            "pt_BR": "Economia do lar"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f879f21e495206eddce36"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bc421e495206eddce45"
+        },
+        "name": {
+            "pt_BR": "Pastagens"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87ab21e495206eddce37"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bc421e495206eddce46"
+        },
+        "name": {
+            "pt_BR": "Alimenta\u00e7\u00e3o"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87ab21e495206eddce37"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bc421e495206eddce47"
+        },
+        "name": {
+            "pt_BR": "Controle de doen\u00e7as"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87ab21e495206eddce37"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bc421e495206eddce48"
+        },
+        "name": {
+            "pt_BR": "Fertilidade"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87ab21e495206eddce37"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bd421e495206eddce49"
+        },
+        "name": {
+            "pt_BR": "Alimenta\u00e7\u00e3o"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87b921e495206eddce38"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bd421e495206eddce4a"
+        },
+        "name": {
+            "pt_BR": "Controle de doen\u00e7as"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87b921e495206eddce38"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8be321e495206eddce4b"
+        },
+        "name": {
+            "pt_BR": "Pastagens"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87cc21e495206eddce39"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8be321e495206eddce4c"
+        },
+        "name": {
+            "pt_BR": "Alimenta\u00e7\u00e3o"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87cc21e495206eddce39"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8be321e495206eddce4d"
+        },
+        "name": {
+            "pt_BR": "Controle de doen\u00e7as"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87cc21e495206eddce39"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8be321e495206eddce4e"
+        },
+        "name": {
+            "pt_BR": "Fertilidade"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87cc21e495206eddce39"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bf921e495206eddce4f"
+        },
+        "name": {
+            "pt_BR": "Alimenta\u00e7\u00e3o"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87e121e495206eddce3a"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bf921e495206eddce50"
+        },
+        "name": {
+            "pt_BR": "Controle de doen\u00e7as"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87e121e495206eddce3a"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611f8bf921e495206eddce51"
+        },
+        "name": {
+            "pt_BR": "Fertilidade"
+        },
+        "active": true,
+        "assistance_area_id": {
+            "$oid": "611f87e121e495206eddce3a"
+        }
+    }
+]

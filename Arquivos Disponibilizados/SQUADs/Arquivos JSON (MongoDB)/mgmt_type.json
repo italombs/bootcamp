@@ -1,0 +1,38 @@
+[
+    {
+        "_id": {
+            "$oid": "5eb2eb1bb187a8f7b9da5297"
+        },
+        "type": "weed",
+        "active": true,
+        "name": {
+            "en_US": "Weed",
+            "pt_BR": "Planta daninha"
+        },
+        "order": 1
+    },
+    {
+        "_id": {
+            "$oid": "5eb2eb1bb187a8f7b9da5298"
+        },
+        "type": "pest",
+        "active": true,
+        "name": {
+            "en_US": "Pest",
+            "pt_BR": "Praga"
+        },
+        "order": 2
+    },
+    {
+        "_id": {
+            "$oid": "5eb2eb1bb187a8f7b9da5299"
+        },
+        "type": "disease",
+        "active": true,
+        "name": {
+            "en_US": "Plant disease",
+            "pt_BR": "Doen\u00e7a"
+        },
+        "order": 3
+    }
+]

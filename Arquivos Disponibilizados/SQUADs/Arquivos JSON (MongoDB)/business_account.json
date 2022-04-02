@@ -1,0 +1,390 @@
+[
+    {
+        "_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "cnpj": "12.345.678/9000-00",
+        "active": true,
+        "licences": 1000,
+        "name": "AG.IN",
+        "contact_name": "RODRIGO",
+        "contact_number": "+5511999999999",
+        "address": {
+            "street_name": "AVENIDA PAULISTA",
+            "address_number": 80,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08679-000"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5e932b7376b8ba3a62d05a5c"
+        },
+        "active": true,
+        "name": "PLANTAR",
+        "licences": 1
+    },
+    {
+        "_id": {
+            "$oid": "5f3ee39d883514345a640c58"
+        },
+        "cnpj": "12.345.678/1010-10",
+        "active": true,
+        "licences": 1111,
+        "name": "Atomic",
+        "contact_name": "ATOMIC",
+        "contact_number": "+5511909990099",
+        "address": {
+            "street_name": "TESTE",
+            "address_number": 80,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fa296daf187cd6dfe3bd6c0"
+        },
+        "active": true,
+        "licenses": 1000,
+        "name": "SENAR"
+    },
+    {
+        "_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "cnpj": "55.555.555/5555-55",
+        "active": true,
+        "licences": 10,
+        "name": "NEW AG.IN",
+        "contact_name": "ZE",
+        "contact_number": "+5562999999999",
+        "address": {
+            "street_name": "X",
+            "address_number": 10,
+            "city": "Uberl\u00e2ndia",
+            "state": "Minas Gerais",
+            "country": "Brazil",
+            "zip_code": "56.000-000"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "cnpj": "12.345.678/9101-11",
+        "active": true,
+        "licences": 10,
+        "name": "AGRO SAO PAULO",
+        "contact_name": "MARIA",
+        "contact_number": "+5562988888888",
+        "address": {
+            "street_name": "AV CIRCULAR",
+            "city": "Aparecida de Goi\u00e2nia",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": "74375752"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "cnpj": "12.345.678/9000-00",
+        "active": true,
+        "licences": 10,
+        "name": "AGRO GOIAS",
+        "contact_name": "JOAO",
+        "contact_number": "+556279999999",
+        "address": {
+            "street_name": "RUA TESTE",
+            "address_number": 30,
+            "city": "Rio Verde",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "cnpj": "12.345.678/9101-01",
+        "active": true,
+        "licences": 999,
+        "name": "AGRONEURAL",
+        "contact_name": "WESLEY FARIA",
+        "contact_number": "+5511999999999",
+        "address": {
+            "street_name": "TESTE",
+            "address_number": 80,
+            "city": "Goi\u00e2nia",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": "08999-000"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "605be4af754309be28e661f0"
+        },
+        "active": false,
+        "licences": 5,
+        "name": "AGRO BRASILIA",
+        "contact_name": "JOAO",
+        "contact_number": "+5561998987899",
+        "address": {
+            "street_name": "",
+            "city": "Bras\u00edlia",
+            "state": "Federal District",
+            "country": "Brazil",
+            "zip_code": ""
+        }
+    },
+    {
+        "_id": {
+            "$oid": "605d1c3f600296809b4d694b"
+        },
+        "active": true,
+        "licences": 1,
+        "name": "AGRO JOANA",
+        "contact_name": "JOANA",
+        "contact_number": "+6199998887",
+        "address": {
+            "street_name": "",
+            "city": "Goi\u00e2nia",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": ""
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61219d89c453a71b05386c2a"
+        },
+        "active": true,
+        "licences": 10,
+        "name": "TESTE",
+        "contact_name": "TESTE CONTACT",
+        "contact_number": "+5511987875421",
+        "address": {
+            "street_name": "RUA TENENTE AZEVEDO CRUZ",
+            "address_number": 123456,
+            "city": "Alto Boa Vista",
+            "state": "Mato Grosso",
+            "country": "Brazil",
+            "zip_code": "69317-542"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612448fba55b2bc0bf313e17"
+        },
+        "active": true,
+        "licences": 10,
+        "name": "TESTE 2",
+        "contact_name": "TESTE 2",
+        "contact_number": "+5511987654322",
+        "address": {
+            "street_name": "RUA TENENTE AZEVEDO CRUZ",
+            "address_number": 343,
+            "city": "Alto Boa Vista",
+            "state": "Mato Grosso",
+            "country": "Brazil",
+            "zip_code": "69317-542"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6127f5b2dc5fd9211858cce4"
+        },
+        "cnpj": "12.222.222/2222-22",
+        "active": true,
+        "licences": 10,
+        "name": "22 INC",
+        "contact_name": "MARCOS",
+        "contact_number": "+5511989997140",
+        "address": {
+            "street_name": "RUA CAETANO BRAGA,",
+            "address_number": 90,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "active": true,
+        "licences": 10,
+        "name": "11 INC",
+        "contact_name": "AAAA",
+        "contact_number": "+11111",
+        "address": {
+            "street_name": "RUA X",
+            "address_number": 11,
+            "city": "Goi\u00e2nia",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": "74340-180"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6128e9fdde71a5a8f91acc4c"
+        },
+        "cnpj": "12.345.678/9010-10",
+        "active": true,
+        "licences": 111,
+        "name": "MARCOS TESTE",
+        "contact_name": "MARCOS TESTE",
+        "contact_number": "+5522989898989",
+        "address": {
+            "street_name": "RUA CAETANO BRAGA",
+            "address_number": 80,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61291f3b392b655f2fe8c488"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "active": true,
+        "licences": 111,
+        "name": "TESTE",
+        "contact_name": "TESTE",
+        "contact_number": "+5511989997140",
+        "address": {
+            "street_name": "RUA CAETANO BRAGA",
+            "address_number": 80,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61294415e16d92be9e4a54ba"
+        },
+        "cnpj": "12.233.333/3333-33",
+        "active": true,
+        "licences": 111,
+        "name": "TESTE01",
+        "contact_name": "TESTE01",
+        "contact_number": "+5511000000000",
+        "address": {
+            "street_name": "RUA CAETANO BRAGA",
+            "address_number": 80,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61294447e16d92be9e4a54c3"
+        },
+        "cnpj": "12.345.678/9899-99",
+        "active": true,
+        "licences": 111,
+        "name": "TESTANDO",
+        "contact_name": "TESTANDO",
+        "contact_number": "+5511989997140",
+        "address": {
+            "street_name": "RUA DO TESTE",
+            "address_number": 111,
+            "city": "Adamantina",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "08250-490"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6129482a0d47638d2924a247"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "active": true,
+        "licences": 111,
+        "name": "TESTE CAROL 1",
+        "contact_name": "CAROL",
+        "contact_number": "+111111111111",
+        "address": {
+            "street_name": "AAAAAAA AAAAAA",
+            "address_number": 111,
+            "city": "S\u00e3o Paulo",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "11111111"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612a56801961b948203f9bd4"
+        },
+        "cnpj": "12.345.678/9876-54",
+        "active": true,
+        "licences": 10,
+        "name": "NOTE TESTE JECSON",
+        "contact_name": "CONTATO TESTE",
+        "contact_number": "+5511974748585",
+        "address": {
+            "street_name": "RUA TENENTE AZEVEDO CRUZ",
+            "city": "S\u00e3o Paulo",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "69317-542"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "active": true,
+        "licences": 5,
+        "name": "SANDBOX LTDA",
+        "contact_name": "ZE",
+        "contact_number": "+5562999999999",
+        "address": {
+            "street_name": "XX",
+            "address_number": 0,
+            "city": "Goi\u00e2nia",
+            "state": "Goi\u00e1s",
+            "country": "Brazil",
+            "zip_code": "74340-180"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6185345b93281f5867b58a76"
+        },
+        "cnpj": "07.781.855/0001-46",
+        "active": true,
+        "licences": 5,
+        "name": "TESTE AGRO UID",
+        "contact_name": "TESTE",
+        "contact_number": "+5511985555555",
+        "address": {
+            "street_name": "TESTE",
+            "address_number": 16,
+            "city": "Adolfo",
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil",
+            "zip_code": "04841000"
+        }
+    }
+]

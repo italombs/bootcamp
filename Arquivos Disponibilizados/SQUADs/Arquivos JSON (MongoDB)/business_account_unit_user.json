@@ -1,0 +1,170 @@
+[
+    {
+        "_id": {
+            "$oid": "61294d4a0d47638d2924a4bb"
+        },
+        "business_account_unit_list": [
+            "6129482a0d47638d2924a248",
+            "61294d340d47638d2924a4b8"
+        ],
+        "user_id": {
+            "$oid": "6129444ab96e1a1c75acbdb4"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612a6d54156643fb0bab6f28"
+        },
+        "business_account_unit_list": [
+            "611d9f29711144330abd037d",
+            "611da1be711144330abd0471",
+            "611fa209b961fe30e89be81e"
+        ],
+        "user_id": {
+            "$oid": "60480c042060b7465875acd9"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612a6d6f156643fb0bab6f9a"
+        },
+        "business_account_unit_list": [
+            "611fa209b961fe30e89be81e"
+        ],
+        "user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612a70e1156643fb0bab70e7"
+        },
+        "business_account_unit_list": [
+            "611da1be711144330abd0471"
+        ],
+        "user_id": {
+            "$oid": "604cc209a1712ddb59ed5c9e"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "612a903ee50627934923fa8e"
+        },
+        "business_account_unit_list": [
+            "6128e93edd787b27f8a7abd4"
+        ],
+        "user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6148898ca61283de7b107bc1"
+        },
+        "business_account_unit_list": [
+            "61488968a61283de7b107b06"
+        ],
+        "user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61488990a61283de7b107bdb"
+        },
+        "business_account_unit_list": [
+            "61488968a61283de7b107b06"
+        ],
+        "user_id": {
+            "$oid": "61488942f5123d14db6bcf07"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61829751874f03c7cdeef5ab"
+        },
+        "business_account_unit_list": [
+            "612a503866574f1ef51f55e6"
+        ],
+        "user_id": {
+            "$oid": "6053ba441cfc4ee8b9921a0a"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "6185346c93281f5867b58aa7"
+        },
+        "business_account_unit_list": [
+            "6185345c93281f5867b58a77"
+        ],
+        "user_id": {
+            "$oid": "6183ef8c097abe49d1362d1d"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "619f9b4c7b13d77f225f167a"
+        },
+        "business_account_unit_list": [
+            "61219d8dc453a71b05386c2b"
+        ],
+        "user_id": {
+            "$oid": "6139f8a068bc3e118358fd06"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "619f9bc67b13d77f225f172f"
+        },
+        "business_account_unit_list": [
+            "61488968a61283de7b107b06"
+        ],
+        "user_id": {
+            "$oid": "61277d9d113e81b2b41c2dba"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61a57d676840711a5eaa5139"
+        },
+        "business_account_unit_list": [
+            "61a57d566840711a5eaa5132"
+        ],
+        "user_id": {
+            "$oid": "6053bb241cfc4ee8b9921a0b"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61a9f05432788e1ed1118ad6"
+        },
+        "business_account_unit_list": [
+            "6139fa313162f987461b1fee"
+        ],
+        "user_id": {
+            "$oid": "61a9f017c3012d07a7a877e1"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f9c4585f46bc74a407542f"
+        },
+        "business_account_unit_list": [
+            "611d9f29711144330abd037d"
+        ],
+        "user_id": {
+            "$oid": "6060c723fbc73781385b7026"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61f9c48a5f46bc74a40755e0"
+        },
+        "business_account_unit_list": [
+            "6139fa313162f987461b1fee"
+        ],
+        "user_id": {
+            "$oid": "6053b9d81cfc4ee8b9921a09"
+        }
+    }
+]

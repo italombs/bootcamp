@@ -62,6 +62,8 @@ CREATE TABLE d_crop_tech
 )
 
 
+select * from d_crop_tech
+
 -----------------------------------------
 --CRIA TABELA d_crop_type CASO N�O EXISTA
 -----------------------------------------

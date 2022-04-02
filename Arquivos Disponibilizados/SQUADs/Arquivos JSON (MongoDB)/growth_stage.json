@@ -1,0 +1,74 @@
+[
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412ed8"
+        },
+        "type": "post_harvest",
+        "active": true,
+        "name": {
+            "en_US": "Post harvest",
+            "pt_BR": "Pousio"
+        },
+        "order": 1
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412ed9"
+        },
+        "type": "pre_planting",
+        "active": true,
+        "name": {
+            "en_US": "Pre planting",
+            "pt_BR": "Pr\u00e9-plantio"
+        },
+        "order": 2
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412edb"
+        },
+        "type": "vegetative",
+        "active": true,
+        "name": {
+            "en_US": "Vegetative",
+            "pt_BR": "Vegetativo"
+        },
+        "order": 4
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412edd"
+        },
+        "type": "pre_harvest",
+        "active": true,
+        "name": {
+            "en_US": "Pre harvest",
+            "pt_BR": "Pr\u00e9-colheita"
+        },
+        "order": 6
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412eda"
+        },
+        "type": "post_planting",
+        "active": true,
+        "name": {
+            "en_US": "Post planting",
+            "pt_BR": "P\u00f3s-plantio"
+        },
+        "order": 3
+    },
+    {
+        "_id": {
+            "$oid": "5ea0a587a50f3f14a5412edc"
+        },
+        "type": "reproductive",
+        "active": true,
+        "name": {
+            "en_US": "Reproductive",
+            "pt_BR": "Reprodutivo"
+        },
+        "order": 5
+    }
+]

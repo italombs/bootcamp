@@ -1,0 +1,65 @@
+[
+    {
+        "_id": {
+            "$oid": "611f877e21e495206eddce34"
+        },
+        "name": {
+            "pt_BR": "Agricultura"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f878f21e495206eddce35"
+        },
+        "name": {
+            "pt_BR": "Cr\u00e9dito Rural"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f879f21e495206eddce36"
+        },
+        "name": {
+            "pt_BR": "Bem-estar"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f87ab21e495206eddce37"
+        },
+        "name": {
+            "pt_BR": "Bovino"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f87b921e495206eddce38"
+        },
+        "name": {
+            "pt_BR": "Aves"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f87cc21e495206eddce39"
+        },
+        "name": {
+            "pt_BR": "Caprino"
+        },
+        "active": true
+    },
+    {
+        "_id": {
+            "$oid": "611f87e121e495206eddce3a"
+        },
+        "name": {
+            "pt_BR": "Su\u00edno"
+        },
+        "active": true
+    }
+]

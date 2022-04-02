@@ -1,0 +1,1074 @@
+[
+    {
+        "_id": {
+            "$oid": "5e448ad7b1dbae5124e4b7fd"
+        },
+        "name": "Sample",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "areas": {
+            "city": "\"S\u00e3o Jo\u00e3o do Pau d'Alho\"",
+            "latitude": "-21.205190658569336",
+            "longitude": "-51.66857147216797",
+            "state": "\"S\u00e3o Paulo\"",
+            "country": "\"Brazil\""
+        },
+        "consultant_user_id": {
+            "$oid": "60f838ac82de290649e06bd4"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "size": 10
+    },
+    {
+        "_id": {
+            "$oid": "5f1af73406fbc249bc261368"
+        },
+        "cnpj": "61.532.198/0002-20",
+        "name": "FAZENDA S\u00c3O TOMAZ",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "60f838ac82de290649e06bd4"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "S\u00e3o Jo\u00e3o do Pau d'Alho",
+            "latitude": -21.205190658569336,
+            "longitude": -51.66857147216797,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 20
+    },
+    {
+        "_id": {
+            "$oid": "5f935ca29991b96eea4b3f59"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "FAZENDA NYCOLLE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "60f838ac82de290649e06bd4"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 25
+    },
+    {
+        "_id": {
+            "$oid": "5fa29729f187cd6dfe3bd6c2"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "FAZENDA GOYAZ",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5fa296daf187cd6dfe3bd6c0"
+        },
+        "consultant_user_id": {
+            "$oid": "5fa29706f187cd6dfe3bd6c1"
+        },
+        "farm_route_id": {
+            "$oid": "61bbde67ea5ed9a3bcbd65e4"
+        },
+        "address": {
+            "city": "Aparecida de Goi\u00e2nia",
+            "latitude": -16.83993911743164,
+            "longitude": -49.24835968017578,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 15
+    },
+    {
+        "_id": {
+            "$oid": "60232d6de4cd0f37be4ad6bb"
+        },
+        "cnpj": "22.222.222/2222-22",
+        "name": "FAZENDA DO XX",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "611fa202b961fe30e89be81b"
+        },
+        "address": {
+            "city": "Belo Campo",
+            "latitude": -14.874190330505371,
+            "longitude": -41.22671127319336,
+            "state": "Bahia",
+            "country": "Brazil"
+        },
+        "size": 12
+    },
+    {
+        "_id": {
+            "$oid": "604817b22060b7465875b362"
+        },
+        "cnpj": "55.555.555/5555-55",
+        "name": "FAZENDA 1",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "consultant_user_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "address": {
+            "city": "Trin",
+            "latitude": 46.862430572509766,
+            "longitude": 9.329919815063477,
+            "state": "Grisons",
+            "country": "Switzerland"
+        },
+        "size": 22
+    },
+    {
+        "_id": {
+            "$oid": "604817d02060b7465875b3d9"
+        },
+        "cnpj": "56.754.674/5674-56",
+        "name": "FAZENDA 2",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "consultant_user_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "address": {
+            "city": "Abruzzo",
+            "latitude": 42.25,
+            "longitude": 13.75,
+            "state": "Abruzzo",
+            "country": "Italy"
+        },
+        "size": 49
+    },
+    {
+        "_id": {
+            "$oid": "604817e82060b7465875b450"
+        },
+        "cnpj": "09.879.876/8769-87",
+        "name": "FAZENDA 3",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "consultant_user_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "address": {
+            "city": "Bras",
+            "latitude": 43.47193908691406,
+            "longitude": 5.953609943389893,
+            "state": "Provence-Alpes-C\u00f4te d'Azur",
+            "country": "France"
+        },
+        "size": 11
+    },
+    {
+        "_id": {
+            "$oid": "604818052060b7465875b4c1"
+        },
+        "cnpj": "23.452.345/2345-23",
+        "name": "FAZENDA 4",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "consultant_user_id": {
+            "$oid": "60480f352060b7465875ad6d"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 39
+    },
+    {
+        "_id": {
+            "$oid": "604818232060b7465875b532"
+        },
+        "cnpj": "67.456.734/5234-12",
+        "name": "FAZENDA 5",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "consultant_user_id": {
+            "$oid": "60480f352060b7465875ad6d"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "address": {
+            "city": "Bras\u00edlia",
+            "latitude": -15.791589736938477,
+            "longitude": -47.89558029174805,
+            "state": "Federal District",
+            "country": "Brazil"
+        },
+        "size": 37
+    },
+    {
+        "_id": {
+            "$oid": "6048183d2060b7465875b5a3"
+        },
+        "cnpj": "67.845.623/4124-25",
+        "name": "FAZENDA 6",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "consultant_user_id": {
+            "$oid": "60480f572060b7465875ad9f"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 27
+    },
+    {
+        "_id": {
+            "$oid": "604818592060b7465875b614"
+        },
+        "cnpj": "45.756.785/6734-35",
+        "name": "FAZENDA 7",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "consultant_user_id": {
+            "$oid": "60480f572060b7465875ad9f"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 22
+    },
+    {
+        "_id": {
+            "$oid": "604818772060b7465875b685"
+        },
+        "cnpj": "53.453.287/2304-95",
+        "name": "FAZENDA 8",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "consultant_user_id": {
+            "$oid": "60480f6b2060b7465875add1"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 18
+    },
+    {
+        "_id": {
+            "$oid": "6048189a2060b7465875b6e4"
+        },
+        "name": "FAZENDA 9",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 17
+    },
+    {
+        "_id": {
+            "$oid": "604818b72060b7465875b743"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "FAZENDA Y",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 11
+    },
+    {
+        "_id": {
+            "$oid": "604818cc2060b7465875b7a3"
+        },
+        "cnpj": "34.532.452/3452-34",
+        "name": "FAZENDA W",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 87
+    },
+    {
+        "_id": {
+            "$oid": "604818e32060b7465875b805"
+        },
+        "cnpj": "56.734.523/4123-41",
+        "name": "FAZENDA X",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "6048174a2060b7465875b29a"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 101
+    },
+    {
+        "_id": {
+            "$oid": "604818fc2060b7465875b869"
+        },
+        "cnpj": "67.456.734/5623-52",
+        "name": "FAZENDA 10",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "6048174a2060b7465875b29a"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 98
+    },
+    {
+        "_id": {
+            "$oid": "6060c307b771a322b4dabb7d"
+        },
+        "cnpj": "56.745.675/4685-67",
+        "name": "FAZENDA AZUL",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "consultant_user_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "address": {
+            "city": "Arroyo Costa",
+            "latitude": -25.645389556884766,
+            "longitude": -56.32891845703125,
+            "state": "Guair\u00e1",
+            "country": "Paraguay"
+        },
+        "size": 78
+    },
+    {
+        "_id": {
+            "$oid": "6060c418b771a322b4dabe33"
+        },
+        "cnpj": "46.578.564/7845-67",
+        "name": "FAZENDA P",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "consultant_user_id": {
+            "$oid": "60480c122060b7465875ad0b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "address": {
+            "city": "Aparecida de Goi\u00e2nia",
+            "latitude": -16.83993911743164,
+            "longitude": -49.24835968017578,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 16
+    },
+    {
+        "_id": {
+            "$oid": "60705b32557cc2a4517ea18c"
+        },
+        "cnpj": "35.463.435/1234-52",
+        "name": "FAZENDA TABOQUINHA",
+        "active": true,
+        "business_account_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "consultant_user_id": {
+            "$oid": "5ec5874ef146ba28c0633a5b"
+        },
+        "farm_route_id": {
+            "$oid": "61bbe456ea5ed9a3bcbd6a4d"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 78
+    },
+    {
+        "_id": {
+            "$oid": "60cde5e92d658a44ac2145fa"
+        },
+        "name": "FAZENDA SUMARE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "size": 81
+    },
+    {
+        "_id": {
+            "$oid": "61127a138b0ce5ddd06e77e1"
+        },
+        "cnpj": "32.323.232/3122-32",
+        "name": "TESTE",
+        "size": 200,
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "611e6a6b710ba74069a92699"
+        },
+        "cnpj": "12.121.212/1212-12",
+        "name": "MARCOS VICTOR MONTEIRO JUNIOR",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "611da34a711144330abd050d"
+        },
+        "address": {
+            "city": "Alambari",
+            "latitude": -23.537450790405273,
+            "longitude": -47.862728118896484,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 178
+    },
+    {
+        "_id": {
+            "$oid": "611e6d2f710ba74069a92804"
+        },
+        "cnpj": "34.343.434/4433-44",
+        "name": "TESTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "Alambari",
+            "latitude": -23.537450790405273,
+            "longitude": -47.862728118896484,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 69
+    },
+    {
+        "_id": {
+            "$oid": "611e7885242eb9e88b2d294a"
+        },
+        "cnpj": "23.432.432/4234-23",
+        "name": "TESTE1",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "Adolfo",
+            "latitude": -21.285350799560547,
+            "longitude": -49.65496826171875,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 124
+    },
+    {
+        "_id": {
+            "$oid": "611e82366e059b28cd093bea"
+        },
+        "cnpj": "34.324.324/2342-34",
+        "name": "TESTE2",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "611da34a711144330abd050d"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 111
+    },
+    {
+        "_id": {
+            "$oid": "61299c6bb4036ea5a187c3ed"
+        },
+        "cnpj": "12.121.212/1212-12",
+        "name": "FAZENDA",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "61298a257b430d609fd296ef"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 135
+    },
+    {
+        "_id": {
+            "$oid": "612a809c4042d0ecd14ef14a"
+        },
+        "cnpj": "12.121.212/1212-12",
+        "name": "TESTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "consultant_user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "farm_route_id": {
+            "$oid": "612a8f0ce50627934923f879"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 145
+    },
+    {
+        "_id": {
+            "$oid": "612a83324042d0ecd14ef205"
+        },
+        "cnpj": "12.222.222/2222-22",
+        "name": "TESTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "consultant_user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "farm_route_id": {
+            "$oid": "612a6166fe516c790cc800d9"
+        },
+        "address": {
+            "city": "Amparo de S\u00e3o Francisco",
+            "latitude": -10.137359619140625,
+            "longitude": -36.92219161987305,
+            "state": "Sergipe",
+            "country": "Brazil"
+        },
+        "size": 156
+    },
+    {
+        "_id": {
+            "$oid": "612a89264b402ad82f96ff94"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "TESTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Adolfo",
+            "latitude": -21.285350799560547,
+            "longitude": -49.65496826171875,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 120
+    },
+    {
+        "_id": {
+            "$oid": "612a8e06967852fcf80e19a2"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "TESTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "consultant_user_id": {
+            "$oid": "604817372060b7465875b268"
+        },
+        "farm_route_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 167
+    },
+    {
+        "_id": {
+            "$oid": "612a8f47e50627934923f922"
+        },
+        "cnpj": "22.222.222/2222-22",
+        "name": "FAZENDA 11 DO NORTE",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "consultant_user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "farm_route_id": {
+            "$oid": "612a8f0ce50627934923f879"
+        },
+        "address": {
+            "city": "Itaja\u00ed",
+            "latitude": -26.97524070739746,
+            "longitude": -48.771461486816406,
+            "state": "Santa Catarina",
+            "country": "Brazil"
+        },
+        "size": 149
+    },
+    {
+        "_id": {
+            "$oid": "612a90cbe50627934923fb57"
+        },
+        "cnpj": "99.999.999/9999-99",
+        "name": "FAZENDA 11 DO SUL",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "consultant_user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "farm_route_id": {
+            "$oid": "612a6166fe516c790cc800d9"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        },
+        "size": 88
+    },
+    {
+        "_id": {
+            "$oid": "612d3ce6451086f0ef6d7eb9"
+        },
+        "cnpj": "23.432.423/4324-42",
+        "name": "CABRAL",
+        "active": true,
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "consultant_user_id": {
+            "$oid": "5f1af64b06fbc249bc261365"
+        },
+        "farm_route_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 77
+    },
+    {
+        "_id": {
+            "$oid": "6140b8a8f150fa4840001e6e"
+        },
+        "cnpj": "12.345.678/9000-00",
+        "name": "FARM TESTE 1",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6129482a0d47638d2924a247"
+        },
+        "consultant_user_id": {
+            "$oid": "6129444ab96e1a1c75acbdb4"
+        },
+        "farm_route_id": {
+            "$oid": "61294d250d47638d2924a4b5"
+        },
+        "address": {
+            "city": "S\u00e3o Paulo",
+            "latitude": -22.0,
+            "longitude": -49.0,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 69
+    },
+    {
+        "_id": {
+            "$oid": "6140b8eff150fa4840001f13"
+        },
+        "cnpj": "11.123.456/7890-00",
+        "name": "FARM TESTE 2 ",
+        "active": true,
+        "business_account_id": {
+            "$oid": "6129482a0d47638d2924a247"
+        },
+        "consultant_user_id": {
+            "$oid": "6129444ab96e1a1c75acbdb4"
+        },
+        "farm_route_id": {
+            "$oid": "61294d250d47638d2924a4b5"
+        },
+        "address": {
+            "city": "S\u00e3o Paulo",
+            "latitude": -22.0,
+            "longitude": -49.0,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        },
+        "size": 98
+    },
+    {
+        "_id": {
+            "$oid": "614889b6a61283de7b107c7f"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "SANDBOX FARM",
+        "size": 151,
+        "active": true,
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "consultant_user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "farm_route_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61b889e3f638c620596dc3a6"
+        },
+        "cnpj": "22.918.138/0001-07",
+        "name": "TESTE TALH\u00c3O",
+        "size": 22,
+        "active": true,
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "consultant_user_id": {
+            "$oid": "6128eb5fda0f53712c249697"
+        },
+        "farm_route_id": {
+            "$oid": "612a6166fe516c790cc800d9"
+        },
+        "address": {
+            "city": "Adamantina",
+            "latitude": -21.591360092163086,
+            "longitude": -51.066688537597656,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61cda4c40d0fa740a8997d74"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "FAZENDA SEM TALHAO",
+        "size": 15,
+        "active": true,
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "consultant_user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "farm_route_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "address": {
+            "city": "Goi\u00e2nia",
+            "latitude": -16.64019012451172,
+            "longitude": -49.25992965698242,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "61ce1a8510590a9584dced94"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "FAZENDA COM TALHAO",
+        "size": 20,
+        "active": true,
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "consultant_user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "farm_route_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "address": {
+            "city": "Trindade",
+            "latitude": -16.653640747070312,
+            "longitude": -49.56768035888672,
+            "state": "Goi\u00e1s",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "622698c1d324c06d6e00acab"
+        },
+        "cnpj": "11.111.111/1111-11",
+        "name": "JO\u00c3O A OLIVEIRA JR",
+        "size": 50,
+        "active": true,
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "consultant_user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "farm_route_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "address": {
+            "city": "S\u00e3o Paulo",
+            "latitude": -22.0,
+            "longitude": -49.0,
+            "state": "S\u00e3o Paulo",
+            "country": "Brazil"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "622698c4d324c06d6e00acbd"
+        },
+        "cnpj": "88.888.888/8888-88",
+        "name": "TUIUTI",
+        "size": 10,
+        "active": true,
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "consultant_user_id": {
+            "$oid": "6148890df5123d14db6bcf06"
+        },
+        "farm_route_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "address": {
+            "city": "Uberl\u00e2ndia",
+            "latitude": -19.023330688476562,
+            "longitude": -48.33477020263672,
+            "state": "Minas Gerais",
+            "country": "Brazil"
+        }
+    }
+]

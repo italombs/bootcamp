@@ -1,0 +1,146 @@
+[
+    {
+        "_id": {
+            "$oid": "60cd33b7b82a045ada9eee88"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "name": "ROTA DO LEITE 2"
+    },
+    {
+        "_id": {
+            "$oid": "6115d8b93528256dc2ae2a40"
+        },
+        "business_account_id": {
+            "$oid": "604816d42060b7465875b10b"
+        },
+        "name": "TESTE ROTA"
+    },
+    {
+        "_id": {
+            "$oid": "611da34a711144330abd050d"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "name": "rota 2"
+    },
+    {
+        "_id": {
+            "$oid": "611da398711144330abd0546"
+        },
+        "business_account_id": {
+            "$oid": "605d1c3f600296809b4d694b"
+        },
+        "name": "rota joana 1"
+    },
+    {
+        "_id": {
+            "$oid": "611fa202b961fe30e89be81b"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "name": "rota 3"
+    },
+    {
+        "_id": {
+            "$oid": "6126988c7f07b7460955dd4d"
+        },
+        "business_account_id": {
+            "$oid": "612448fba55b2bc0bf313e17"
+        },
+        "name": "route 1"
+    },
+    {
+        "_id": {
+            "$oid": "61294d250d47638d2924a4b5"
+        },
+        "business_account_id": {
+            "$oid": "6129482a0d47638d2924a247"
+        },
+        "name": "teste carol rota 1"
+    },
+    {
+        "_id": {
+            "$oid": "61298a257b430d609fd296ef"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "name": "rota carol 1"
+    },
+    {
+        "_id": {
+            "$oid": "612a6166fe516c790cc800d9"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "name": "rota da manteiga"
+    },
+    {
+        "_id": {
+            "$oid": "612a7f2e2d42352bfc984e35"
+        },
+        "business_account_id": {
+            "$oid": "5e932b6676b8ba3a62d05a5b"
+        },
+        "name": "teste"
+    },
+    {
+        "_id": {
+            "$oid": "612a8f0ce50627934923f879"
+        },
+        "business_account_id": {
+            "$oid": "6128e93edd787b27f8a7abd3"
+        },
+        "name": "Rota do Feijao"
+    },
+    {
+        "_id": {
+            "$oid": "61488997a61283de7b107beb"
+        },
+        "business_account_id": {
+            "$oid": "61488968a61283de7b107b05"
+        },
+        "name": "Geral"
+    },
+    {
+        "_id": {
+            "$oid": "61bbde67ea5ed9a3bcbd65e4"
+        },
+        "business_account_id": {
+            "$oid": "5fa296daf187cd6dfe3bd6c0"
+        },
+        "name": "Geral"
+    },
+    {
+        "_id": {
+            "$oid": "61bbe1faea5ed9a3bcbd674f"
+        },
+        "business_account_id": {
+            "$oid": "6048139a2060b7465875b0ff"
+        },
+        "name": "Cana"
+    },
+    {
+        "_id": {
+            "$oid": "61bbe344ea5ed9a3bcbd685b"
+        },
+        "business_account_id": {
+            "$oid": "604813d32060b7465875b105"
+        },
+        "name": "Tiete"
+    },
+    {
+        "_id": {
+            "$oid": "61bbe456ea5ed9a3bcbd6a4d"
+        },
+        "business_account_id": {
+            "$oid": "60496f16c261373c2cc2d017"
+        },
+        "name": "Taboca"
+    }
+]

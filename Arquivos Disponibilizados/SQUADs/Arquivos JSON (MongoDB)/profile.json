@@ -1,0 +1,35 @@
+[
+    {
+        "_id": {
+            "$oid": "5e335b853e8d40676928656a"
+        },
+        "name": {
+            "pt_BR": "Usu\u00e1rio"
+        },
+        "order": 1,
+        "active": true,
+        "type": "user"
+    },
+    {
+        "_id": {
+            "$oid": "5e335bda3e8d40676928656b"
+        },
+        "name": {
+            "pt_BR": "Consultor"
+        },
+        "order": 2,
+        "active": true,
+        "type": "consultant"
+    },
+    {
+        "_id": {
+            "$oid": "5e335c053e8d40676928656c"
+        },
+        "name": {
+            "pt_BR": "Gestor"
+        },
+        "order": 3,
+        "active": true,
+        "type": "business"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "_id": {
+            "$oid": "5e335c873e8d40676928656d"
+        },
+        "name": {
+            "pt_BR": "Agr\u00f4nomo"
+        },
+        "order": 1,
+        "active": true,
+        "type": "agronomist"
+    },
+    {
+        "_id": {
+            "$oid": "5e335cb73e8d40676928656e"
+        },
+        "name": {
+            "pt_BR": "Estudante"
+        },
+        "order": 2,
+        "active": true,
+        "type": "student"
+    },
+    {
+        "_id": {
+            "$oid": "5e335ce63e8d40676928656f"
+        },
+        "name": {
+            "pt_BR": "Produtor"
+        },
+        "order": 3,
+        "active": true,
+        "type": "farmer"
+    },
+    {
+        "_id": {
+            "$oid": "5e335d183e8d406769286570"
+        },
+        "name": {
+            "pt_BR": "Professor"
+        },
+        "order": 4,
+        "active": true,
+        "type": "teacher"
+    },
+    {
+        "_id": {
+            "$oid": "5e335d403e8d406769286571"
+        },
+        "name": {
+            "pt_BR": "Outro"
+        },
+        "order": 99,
+        "active": true,
+        "type": "other"
+    }
+]

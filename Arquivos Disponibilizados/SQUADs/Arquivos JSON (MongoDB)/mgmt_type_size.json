@@ -1,0 +1,119 @@
+[
+    {
+        "_id": {
+            "$oid": "610db088340c13301a29652e"
+        },
+        "mgmt_type": "weed",
+        "name": "small",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Pequeno"
+        },
+        "order": 1
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296530"
+        },
+        "mgmt_type": "weed",
+        "name": "medium",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "M\u00e9dio"
+        },
+        "order": 2
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296532"
+        },
+        "mgmt_type": "pest",
+        "name": "low",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Baixa infesta\u00e7\u00e3o"
+        },
+        "order": 4
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296537"
+        },
+        "mgmt_type": "pest",
+        "name": "high",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Alta infesta\u00e7\u00e3o"
+        },
+        "order": 6
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296539"
+        },
+        "mgmt_type": "disease",
+        "name": "low",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Baixa infesta\u00e7\u00e3o"
+        },
+        "order": 7
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296531"
+        },
+        "mgmt_type": "weed",
+        "name": "big",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Grande"
+        },
+        "order": 3
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a296534"
+        },
+        "mgmt_type": "pest",
+        "name": "medium",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "M\u00e9dia infesta\u00e7\u00e3o"
+        },
+        "order": 5
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a29653b"
+        },
+        "mgmt_type": "disease",
+        "name": "medium",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "M\u00e9dia infesta\u00e7\u00e3o"
+        },
+        "order": 8
+    },
+    {
+        "_id": {
+            "$oid": "610db088340c13301a29653d"
+        },
+        "mgmt_type": "disease",
+        "name": "high",
+        "active": true,
+        "description": {
+            "en_US": "TBD",
+            "pt_BR": "Alta infesta\u00e7\u00e3o"
+        },
+        "order": 9
+    }
+]
