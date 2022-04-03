@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>d_crop_type</name>
+    <name>d_farm</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +426,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/02 09:27:41.071</created_date>
+    <created_date>2022/04/02 21:59:20.385</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/02 10:49:55.146</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/04/02 22:28:34.871</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -500,98 +499,38 @@
   </connection>
   <order>
     <hop>
-      <from>mgmt_history_input</from>
-      <to>srt_mgmt_history</to>
+      <from>farm_route_input</from>
+      <to>srt_farm_route</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>user_input</from>
-      <to>srt_user</to>
+      <from>farm_input</from>
+      <to>srt_farm</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_user</from>
-      <to>mrg_user_mgmt_hist</to>
+      <from>srt_farm</from>
+      <to>mrg_farm_farm_route</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_mgmt_history</from>
-      <to>mrg_user_mgmt_hist</to>
+      <from>srt_farm_route</from>
+      <to>mrg_farm_farm_route</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>farm_areas_input</from>
-      <to>srt_farm_area</to>
+      <from>mrg_farm_farm_route</from>
+      <to>slc_filds</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>mrg_user_mgmt_hist</from>
-      <to>srt_mrg_user_mgmt_hist</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt_farm_area</from>
-      <to>mrg_farm_area</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt_mrg_user_mgmt_hist</from>
-      <to>mrg_farm_area</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>mrg_farm_area</from>
-      <to>slc_dados</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>slc_dados</from>
-      <to>srt_01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt_01</from>
-      <to>remove_duplicados</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>crop_type_input</from>
-      <to>srt_crop_type</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>remove_duplicados</from>
-      <to>srt_02</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt_02</from>
-      <to>mrg_d_crop_type</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt_crop_type</from>
-      <to>mrg_d_crop_type</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>mrg_d_crop_type</from>
-      <to>slc_fields</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>slc_fields</from>
-      <to>filter_null</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>filter_null</from>
-      <to>dlu:d_crop_type</to>
+      <from>slc_filds</from>
+      <to>dlu:d_farm</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>crop_type_input</name>
+    <name>farm_input</name>
     <type>MongoDbInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -601,12 +540,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mongodb.net</hostname>
+    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mo</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
     <db_name>bootcamp</db_name>
     <fields_name/>
-    <collection>crop_type</collection>
+    <collection>farm</collection>
     <json_field_name>json</json_field_name>
     <json_query/>
     <auth_database>admin</auth_database>
@@ -628,660 +567,17 @@
         <field_type>String</field_type>
       </mongo_field>
       <mongo_field>
-        <field_name>type</field_name>
-        <field_path>$.type</field_path>
+        <field_name>name</field_name>
+        <field_path>$.name</field_path>
         <field_type>String</field_type>
       </mongo_field>
       <mongo_field>
-        <field_name>name_pt_BR</field_name>
-        <field_path>$.name.pt_BR</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1264</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>farm_areas_input</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mongodb.net</hostname>
-    <port>27017</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>farm_areas</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>italomesquita</auth_user>
-    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
+        <field_name>farm_route_id</field_name>
+        <field_path>$.farm_route_id</field_path>
         <field_type>String</field_type>
       </mongo_field>
       <mongo_field>
-        <field_name>crop_type</field_name>
-        <field_path>$.properties.crop_type</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>mgmt_history_input</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mongodb.net</hostname>
-    <port>27017</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name>{_id:0,user_id:1,farm_area_id:1}</fields_name>
-    <collection>management_history</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>italomesquita</auth_user>
-    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>user_id</field_name>
-        <field_path>$.user_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farm_area_id</field_name>
-        <field_path>$.farm_area_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>192</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>mrg_d_crop_type</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>srt_02</step1>
-    <step2>srt_crop_type</step2>
-    <keys_1>
-      <key>crop_type</key>
-    </keys_1>
-    <keys_2>
-      <key>_id</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1408</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>mrg_farm_area</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>srt_farm_area</step1>
-    <step2>srt_mrg_user_mgmt_hist</step2>
-    <keys_1>
-      <key>_id</key>
-    </keys_1>
-    <keys_2>
-      <key>farm_area_id</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>mrg_user_mgmt_hist</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>srt_user</step1>
-    <step2>srt_mgmt_history</step2>
-    <keys_1>
-      <key>_id</key>
-    </keys_1>
-    <keys_2>
-      <key>user_id</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>592</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>remove_duplicados</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <count_field/>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description/>
-    <fields>
-      <field>
-        <name>crop_type</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-      <field>
-        <name>business_account_id</name>
-        <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1136</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>slc_dados</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>crop_type</name>
-      </field>
-      <field>
-        <name>business_account_id</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1136</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_01</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>crop_type</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>business_account_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1136</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_02</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>crop_type</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1264</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_crop_type</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1264</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_farm_area</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>792</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_mgmt_history</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>user_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>392</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_mrg_user_mgmt_hist</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>farm_area_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>792</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_user</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>392</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>user_input</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mongodb.net</hostname>
-    <port>27017</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name>{_id:1,business_account_id:1}</fields_name>
-    <collection>user</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>italomesquita</auth_user>
-    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>business_account_id</field_name>
+        <field_name>tenant_id</field_name>
         <field_path>$.business_account_id</field_path>
         <field_type>String</field_type>
       </mongo_field>
@@ -1295,13 +591,188 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>176</yloc>
+      <xloc>144</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>slc_fields</name>
+    <name>farm_route_input</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mo</hostname>
+    <port>27017</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>farm_route</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>italomesquita</auth_user>
+    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>name</field_name>
+        <field_path>$.name</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt_farm_route</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>344</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt_farm</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>farm_route_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>344</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>mrg_farm_farm_route</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>srt_farm</step1>
+    <step2>srt_farm_route</step2>
+    <keys_1>
+      <key>farm_route_id</key>
+    </keys_1>
+    <keys_2>
+      <key>_id</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>slc_filds</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -1317,16 +788,16 @@
         <rename>mongo_key</rename>
       </field>
       <field>
-        <name>type</name>
+        <name>name</name>
         <rename/>
       </field>
       <field>
-        <name>name_pt_BR</name>
-        <rename>name</rename>
+        <name>tenant_id</name>
+        <rename/>
       </field>
       <field>
-        <name>business_account_id</name>
-        <rename>tenant_id</rename>
+        <name>name_1</name>
+        <rename>route_name</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1339,48 +810,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1568</xloc>
-      <yloc>176</yloc>
+      <xloc>656</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>filter_null</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>dlu:d_crop_type</send_true_to>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>tenant_id</leftvalue>
-        <function>IS NOT NULL</function>
-        <rightvalue/>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1568</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>dlu:d_crop_type</name>
+    <name>dlu:d_farm</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -1391,7 +827,7 @@
       <schema_name/>
     </partitioning>
     <schema/>
-    <table>d_crop_type</table>
+    <table>d_farm</table>
     <connection>SQL DW</connection>
     <commit>100</commit>
     <update>Y</update>
@@ -1401,16 +837,16 @@
         <lookup>mongo_key</lookup>
       </key>
       <key>
-        <name>type</name>
-        <lookup>type</lookup>
-      </key>
-      <key>
         <name>name</name>
         <lookup>name</lookup>
       </key>
       <key>
         <name>tenant_id</name>
         <lookup>tenant_id</lookup>
+      </key>
+      <key>
+        <name>route_name</name>
+        <lookup>route_name</lookup>
       </key>
       <date>
         <name/>
@@ -1443,8 +879,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1568</xloc>
-      <yloc>432</yloc>
+      <xloc>800</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
