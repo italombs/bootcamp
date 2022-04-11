@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
     <name>d_farm_area</name>
@@ -429,28 +430,24 @@
     <created_date>2022/04/03 17:55:51.507</created_date>
     <modified_user>-</modified_user>
     <modified_date>2022/04/03 18:13:22.202</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>SQL DW</name>
-    <server>localhost</server>
+    <name>SQL GoogleCloud</name>
+    <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>BOOTCAMP_DW</database>
-    <port>1433</port>
-    <username>SA</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10fba09ff7</password>
+    <database>${CLOUD_DATABASE}</database>
+    <port>${CLOUD_PORT}</port>
+    <username>${CLOUD_USERNAME}</username>
+    <password>${CLOUD_PASSWORD}</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MSSQLNATIVE.instance</code>
-        <attribute>MSSQLSERVER</attribute>
-      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -473,7 +470,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>1433</attribute>
+        <attribute>${CLOUD_PORT}</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -530,6 +527,71 @@
     </hop>
   </order>
   <step>
+    <name>dlu:d_farm_area</name>
+    <type>DimensionLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <schema/>
+    <table>d_farm_area</table>
+    <connection>SQL GoogleCloud</connection>
+    <commit>100</commit>
+    <update>Y</update>
+    <fields>
+      <key>
+        <name>mongo_key</name>
+        <lookup>mongo_key</lookup>
+      </key>
+      <key>
+        <name>name</name>
+        <lookup>name</lookup>
+      </key>
+      <key>
+        <name>tenant_id</name>
+        <lookup>tenant_id</lookup>
+      </key>
+      <date>
+        <name/>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <return>
+        <name>id</name>
+        <rename/>
+        <creation_method>tablemax</creation_method>
+        <use_autoinc>N</use_autoinc>
+        <version>version</version>
+      </return>
+    </fields>
+    <sequence/>
+    <min_year>1900</min_year>
+    <max_year>2199</max_year>
+    <cache_size>5000</cache_size>
+    <preload_cache>N</preload_cache>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <start_date_alternative>none</start_date_alternative>
+    <start_date_field_name/>
+    <useBatch>N</useBatch>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>farm_area_input</name>
     <type>MongoDbInput</type>
     <description/>
@@ -540,8 +602,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mo</hostname>
-    <port>27017</port>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
     <use_all_replica_members>N</use_all_replica_members>
     <db_name>bootcamp</db_name>
     <fields_name/>
@@ -549,8 +611,8 @@
     <json_field_name>json</json_field_name>
     <json_query/>
     <auth_database>admin</auth_database>
-    <auth_user>italomesquita</auth_user>
-    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
     <auth_mech>SCRAM-SHA-1</auth_mech>
     <auth_kerberos>N</auth_kerberos>
     <connect_timeout/>
@@ -602,8 +664,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>cluster0-shard-00-00.0ttfc.mongodb.net,cluster0-shard-00-01.0ttfc.mongodb.net,cluster0-shard-00-02.0ttfc.mo</hostname>
-    <port>27017</port>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
     <use_all_replica_members>N</use_all_replica_members>
     <db_name>bootcamp</db_name>
     <fields_name/>
@@ -611,8 +673,8 @@
     <json_field_name>json</json_field_name>
     <json_query/>
     <auth_database>admin</auth_database>
-    <auth_user>italomesquita</auth_user>
-    <auth_password>Encrypted 2be98afc86ace8685a716ff228ec3fa8a</auth_password>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
     <auth_mech>SCRAM-SHA-1</auth_mech>
     <auth_kerberos>N</auth_kerberos>
     <connect_timeout/>
@@ -645,90 +707,6 @@
     <GUI>
       <xloc>224</xloc>
       <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_id</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>424</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_farm_id</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>farm_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>424</xloc>
-      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -780,15 +758,12 @@
     <fields>
       <field>
         <name>mongo_key</name>
-        <rename/>
       </field>
       <field>
         <name>name</name>
-        <rename/>
       </field>
       <field>
         <name>tenant_id</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -807,8 +782,8 @@
     </GUI>
   </step>
   <step>
-    <name>dlu:d_farm_area</name>
-    <type>DimensionLookup</type>
+    <name>srt_farm_id</name>
+    <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -817,46 +792,23 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema/>
-    <table>d_farm_area</table>
-    <connection>SQL DW</connection>
-    <commit>100</commit>
-    <update>Y</update>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
     <fields>
-      <key>
-        <name>mongo_key</name>
-        <lookup>mongo_key</lookup>
-      </key>
-      <key>
-        <name>name</name>
-        <lookup>name</lookup>
-      </key>
-      <key>
-        <name>tenant_id</name>
-        <lookup>tenant_id</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <return>
-        <name>id</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
+      <field>
+        <name>farm_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
     </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -866,7 +818,49 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
+      <xloc>424</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt_id</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>424</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>

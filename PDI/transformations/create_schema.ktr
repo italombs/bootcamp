@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>d_farm</name>
+    <name>create_schema</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,14 +427,73 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/02 21:59:20.385</created_date>
+    <created_date>2022/04/10 00:27:31.526</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/02 22:28:34.871</modified_date>
+    <modified_date>2022/04/10 00:27:31.526</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>GoogleCloud</name>
+    <server>${CLOUD_SERVER}</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>${CLOUD_DATABASE}</database>
+    <port>${CLOUD_PORT}</port>
+    <username>${CLOUD_USERNAME}</username>
+    <password>${CLOUD_PASSWORD}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>${CLOUD_PORT}</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>SQL GoogleCloud</name>
     <server>${CLOUD_SERVER}</server>
@@ -496,39 +555,34 @@
   </connection>
   <order>
     <hop>
-      <from>farm_route_input</from>
-      <to>srt_farm_route</to>
+      <from>estrutura_db</from>
+      <to>remover_extensao</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>farm_input</from>
-      <to>srt_farm</to>
+      <from>remover_extensao</from>
+      <to>saida_database</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_farm</from>
-      <to>mrg_farm_farm_route</to>
+      <from>saida_database</from>
+      <to>verificar_bd</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_farm_route</from>
-      <to>mrg_farm_farm_route</to>
-      <enabled>Y</enabled>
+      <from>verificar_bd</from>
+      <to>only_create</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
-      <from>mrg_farm_farm_route</from>
-      <to>slc_filds</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>slc_filds</from>
-      <to>dlu:d_farm</to>
+      <from>only_create</from>
+      <to>create_tables</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>dlu:d_farm</name>
-    <type>DimensionLookup</type>
+    <name>create_tables</name>
+    <type>ExecSQLRow</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -537,50 +591,80 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema/>
-    <table>d_farm</table>
-    <connection>SQL GoogleCloud</connection>
-    <commit>100</commit>
-    <update>Y</update>
+    <commit>1</commit>
+    <connection>GoogleCloud</connection>
+    <sql_field>content</sql_field>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <sqlFromfile>N</sqlFromfile>
+    <sendOneStatement>Y</sendOneStatement>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>estrutura_db</name>
+    <type>LoadFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>Y</addresultfile>
+    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
+    <IsIgnoreMissingPath>N</IsIgnoreMissingPath>
+    <rownum_field/>
+    <encoding/>
+    <file>
+      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\Scripts</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
     <fields>
-      <key>
-        <name>mongo_key</name>
-        <lookup>mongo_key</lookup>
-      </key>
-      <key>
-        <name>name</name>
-        <lookup>name</lookup>
-      </key>
-      <key>
-        <name>tenant_id</name>
-        <lookup>tenant_id</lookup>
-      </key>
-      <key>
-        <name>route_name</name>
-        <lookup>route_name</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <return>
-        <name>id</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
+      <field>
+        <name>content</name>
+        <element_type>content</element_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
     </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
+    <limit>0</limit>
+    <IsInFields>N</IsInFields>
+    <DynamicFilenameField/>
+    <shortFileFieldName>filename</shortFileFieldName>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -590,14 +674,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>224</yloc>
+      <xloc>112</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>farm_input</name>
-    <type>MongoDbInput</type>
+    <name>only_create</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -606,48 +690,25 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>farm</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farm_route_id</field_name>
-        <field_path>$.farm_route_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>tenant_id</field_name>
-        <field_path>$.business_account_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
+    <send_true_to/>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>exists</leftvalue>
+        <function>=</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>Boolean</type>
+          <text>N</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask/>
+        </value>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -657,54 +718,36 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>160</yloc>
+      <xloc>848</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>farm_route_input</name>
-    <type>MongoDbInput</type>
+    <name>remover_extensao</name>
+    <type>ReplaceString</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>farm_route</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
+    <fields>
+      <field>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name>table</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>.sql</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -714,14 +757,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>272</yloc>
+      <xloc>312</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>mrg_farm_farm_route</name>
-    <type>MergeJoin</type>
+    <name>saida_database</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -730,15 +773,6 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>INNER</join_type>
-    <step1>srt_farm</step1>
-    <step2>srt_farm_route</step2>
-    <keys_1>
-      <key>farm_route_id</key>
-    </keys_1>
-    <keys_2>
-      <key>_id</key>
-    </keys_2>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -749,13 +783,13 @@
     </remotesteps>
     <GUI>
       <xloc>496</xloc>
-      <yloc>224</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>slc_filds</name>
-    <type>SelectValues</type>
+    <name>verificar_bd</name>
+    <type>TableExists</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -764,23 +798,10 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>_id</name>
-        <rename>mongo_key</rename>
-      </field>
-      <field>
-        <name>name</name>
-      </field>
-      <field>
-        <name>tenant_id</name>
-      </field>
-      <field>
-        <name>name_1</name>
-        <rename>route_name</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
+    <connection>SQL GoogleCloud</connection>
+    <tablenamefield>table</tablenamefield>
+    <resultfieldname>exists</resultfieldname>
+    <schemaname/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -790,92 +811,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_farm</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>farm_route_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>344</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_farm_route</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>344</xloc>
-      <yloc>272</yloc>
+      <xloc>672</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

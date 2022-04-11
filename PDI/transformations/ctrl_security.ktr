@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>d_farm</name>
+    <name>ctrl_security</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/02 21:59:20.385</created_date>
+    <created_date>2022/04/09 17:24:28.082</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/02 22:28:34.871</modified_date>
+    <modified_date>2022/04/09 17:24:28.082</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -496,38 +496,178 @@
   </connection>
   <order>
     <hop>
-      <from>farm_route_input</from>
-      <to>srt_farm_route</to>
+      <from>profile</from>
+      <to>srt02</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>farm_input</from>
-      <to>srt_farm</to>
+      <from>user</from>
+      <to>srt01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_farm</from>
-      <to>mrg_farm_farm_route</to>
+      <from>srt01</from>
+      <to>mrg_profile</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_farm_route</from>
-      <to>mrg_farm_farm_route</to>
+      <from>srt02</from>
+      <to>mrg_profile</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>mrg_farm_farm_route</from>
-      <to>slc_filds</to>
+      <from>mrg_profile</from>
+      <to>out01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>slc_filds</from>
-      <to>dlu:d_farm</to>
+      <from>out01</from>
+      <to>slc01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>slc01</from>
+      <to>srt03</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>business_account</from>
+      <to>srt04</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>srt03</from>
+      <to>mrg_business_account</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>srt04</from>
+      <to>mrg_business_account</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>mrg_business_account</from>
+      <to>slc02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>slc02</from>
+      <to>dbl:person_id</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dbl:person_id</from>
+      <to>dlu:ctrl_security</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>dlu:d_farm</name>
+    <name>business_account</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>business_account</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>name</field_name>
+        <field_path>$.name</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>dbl:person_id</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>SQL GoogleCloud</connection>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>dbo</schema>
+      <table>d_person</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>user_key</name>
+        <field>mongo_key</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id</name>
+        <rename>person_id</rename>
+        <default>0</default>
+        <type>None</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>dlu:ctrl_security</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -537,27 +677,35 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema/>
-    <table>d_farm</table>
+    <schema>dbo</schema>
+    <table>ctrl_security</table>
     <connection>SQL GoogleCloud</connection>
     <commit>100</commit>
     <update>Y</update>
     <fields>
       <key>
-        <name>mongo_key</name>
+        <name>email</name>
+        <lookup>email</lookup>
+      </key>
+      <key>
+        <name>role</name>
+        <lookup>role</lookup>
+      </key>
+      <key>
+        <name>tenantid_current</name>
+        <lookup>tenantid_current</lookup>
+      </key>
+      <key>
+        <name>business_account</name>
+        <lookup>business_account</lookup>
+      </key>
+      <key>
+        <name>person_id</name>
+        <lookup>person_id</lookup>
+      </key>
+      <key>
+        <name>user_key</name>
         <lookup>mongo_key</lookup>
-      </key>
-      <key>
-        <name>name</name>
-        <lookup>name</lookup>
-      </key>
-      <key>
-        <name>tenant_id</name>
-        <lookup>tenant_id</lookup>
-      </key>
-      <key>
-        <name>route_name</name>
-        <lookup>route_name</lookup>
       </key>
       <date>
         <name/>
@@ -590,137 +738,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>224</yloc>
+      <xloc>1336</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>farm_input</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>farm</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farm_route_id</field_name>
-        <field_path>$.farm_route_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>tenant_id</field_name>
-        <field_path>$.business_account_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>farm_route_input</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>farm_route</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>mrg_farm_farm_route</name>
+    <name>mrg_business_account</name>
     <type>MergeJoin</type>
     <description/>
     <distribute>Y</distribute>
@@ -730,11 +754,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>INNER</join_type>
-    <step1>srt_farm</step1>
-    <step2>srt_farm_route</step2>
+    <join_type>LEFT OUTER</join_type>
+    <step1>srt03</step1>
+    <step2>srt04</step2>
     <keys_1>
-      <key>farm_route_id</key>
+      <key>tenantid_current</key>
     </keys_1>
     <keys_2>
       <key>_id</key>
@@ -748,13 +772,134 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>224</yloc>
+      <xloc>784</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>slc_filds</name>
+    <name>mrg_profile</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>LEFT OUTER</join_type>
+    <step1>srt01</step1>
+    <step2>srt02</step2>
+    <keys_1>
+      <key>profile_id</key>
+    </keys_1>
+    <keys_2>
+      <key>_id</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>out01</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>profile</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>profile</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>pt_BR</field_name>
+        <field_path>$.name.pt_BR</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>type</field_name>
+        <field_path>$.type</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>slc01</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -766,18 +911,25 @@
     </partitioning>
     <fields>
       <field>
+        <name>email</name>
+      </field>
+      <field>
+        <name>type</name>
+        <rename>role</rename>
+      </field>
+      <field>
+        <name>business_account_id</name>
+        <rename>tenantid_current</rename>
+      </field>
+      <field>
+        <name>user_type_id</name>
+      </field>
+      <field>
+        <name>farm_id</name>
+      </field>
+      <field>
         <name>_id</name>
-        <rename>mongo_key</rename>
-      </field>
-      <field>
-        <name>name</name>
-      </field>
-      <field>
-        <name>tenant_id</name>
-      </field>
-      <field>
-        <name>name_1</name>
-        <rename>route_name</rename>
+        <rename>user_key</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -790,13 +942,57 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>224</yloc>
+      <xloc>704</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>srt_farm</name>
+    <name>slc02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>email</name>
+      </field>
+      <field>
+        <name>role</name>
+      </field>
+      <field>
+        <name>tenantid_current</name>
+      </field>
+      <field>
+        <name>name</name>
+        <rename>business_account</rename>
+      </field>
+      <field>
+        <name>user_key</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>984</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt01</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -815,7 +1011,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>farm_route_id</name>
+        <name>profile_id</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -833,12 +1029,12 @@
     </remotesteps>
     <GUI>
       <xloc>344</xloc>
-      <yloc>160</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>srt_farm_route</name>
+    <name>srt02</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -875,7 +1071,183 @@
     </remotesteps>
     <GUI>
       <xloc>344</xloc>
-      <yloc>272</yloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt03</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>tenantid_current</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>srt04</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>_id</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>user</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>user</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>business_account_id</field_name>
+        <field_path>$.business_account_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>powerbi_account</field_name>
+        <field_path>$.powerbi_account</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>uid</field_name>
+        <field_path>$.uid</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>profile_id</field_name>
+        <field_path>$.profile_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>name</field_name>
+        <field_path>$.name</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>user_type_id</field_name>
+        <field_path>$.user_type_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>email</field_name>
+        <field_path>$.email</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>farm_id</field_name>
+        <field_path>$.farm_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
