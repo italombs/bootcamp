@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>f_atendimento</name>
+    <name>farm</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,20 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/06 22:36:44.698</created_date>
+    <created_date>2022/04/12 22:57:00.813</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/06 22:36:44.698</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/04/12 22:57:00.813</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>SQL GoogleCloud</name>
+    <name>Cloud ST</name>
     <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${CLOUD_DATABASE}</database>
+    <database>${CLOUD_DATABASE_ST}</database>
     <port>${CLOUD_PORT}</port>
     <username>${CLOUD_USERNAME}</username>
     <password>${CLOUD_PASSWORD}</password>
@@ -496,79 +496,64 @@
   </connection>
   <order>
     <hop>
-      <from>ticket</from>
-      <to>srt_01</to>
+      <from>camel case</from>
+      <to>farm_st</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>user</from>
-      <to>srt_02</to>
+      <from>farm</from>
+      <to>filter_null</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_01</from>
-      <to>mrg_farm</to>
+      <from>filter_null</from>
+      <to>ok_address</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt_02</from>
-      <to>mrg_farm</to>
+      <from>filter_null</from>
+      <to>null_address</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>mrg_farm</from>
-      <to>slc</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>slc</from>
-      <to>farm_id</to>
+      <from>null_address</from>
+      <to>if_null</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>farm_id</from>
-      <to>assistance_area_id</to>
+      <from>if_null</from>
+      <to>slc_fields_01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>assistance_area_id</from>
-      <to>farmer_id</to>
+      <from>slc_fields_01</from>
+      <to>Replace in string</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>farmer_id</from>
-      <to>business_account_id</to>
+      <from>ok_address</from>
+      <to>slc_fields_02</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>business_account_id</from>
-      <to>ticket_id</to>
+      <from>slc_fields_02</from>
+      <to>union</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>ticket_id</from>
-      <to>consultant_id</to>
+      <from>Replace in string</from>
+      <to>union</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>consultant_id</from>
-      <to>crtl_security_id</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>crtl_security_id</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>f_atendimento</to>
+      <from>union</from>
+      <to>camel case</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
+    <name>farm</name>
+    <type>MongoDbInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -577,45 +562,108 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>local_date</name>
-      </field>
-      <field>
-        <name>farm_id</name>
-      </field>
-      <field>
-        <name>consultant_id</name>
-      </field>
-      <field>
-        <name>farmer_id</name>
-      </field>
-      <field>
-        <name>ctrl_carga_id</name>
-      </field>
-      <field>
-        <name>cod_ticket</name>
-      </field>
-      <field>
-        <name>ticket_id</name>
-      </field>
-      <field>
-        <name>business_account_id</name>
-      </field>
-      <field>
-        <name>assistance_area_id</name>
-      </field>
-      <field>
-        <name>rate</name>
-      </field>
-      <field>
-        <name>tenant_id</name>
-      </field>
-      <field>
-        <name>farm_size</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
+    <hostname>${MONGO_SERVER}</hostname>
+    <port>${MONGO_PORT}</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>farm</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>${MONGO_USERNAME}</auth_user>
+    <auth_password>${MONGO_PASSWORD}</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>name</field_name>
+        <field_path>$.name</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>business_account_id</field_name>
+        <field_path>$.business_account_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>farm_route_id</field_name>
+        <field_path>$.farm_route_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>consultant_user_id</field_name>
+        <field_path>$.consultant_user_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>size</field_name>
+        <field_path>$.size</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>city_address</field_name>
+        <field_path>$.address.city</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>state_address</field_name>
+        <field_path>$.address.state</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>country_address</field_name>
+        <field_path>$.address.country</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>latitude_address</field_name>
+        <field_path>$.address.latitude</field_path>
+        <field_type>Number</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>longitude_address</field_name>
+        <field_path>$.address.longitude</field_path>
+        <field_type>Number</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>city_areas</field_name>
+        <field_path>$.areas.city</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>state_areas</field_name>
+        <field_path>$.areas.state</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>country_areas</field_name>
+        <field_path>$.areas.country</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>latitude_areas</field_name>
+        <field_path>$.areas.latitude</field_path>
+        <field_type>Number</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>longitude_areas</field_name>
+        <field_path>$.areas.longitude</field_path>
+        <field_type>Number</field_type>
+      </mongo_field>
+    </mongo_fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -625,205 +673,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
-      <yloc>256</yloc>
+      <xloc>128</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>assistance_area_id</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_assistance_area</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>assistance_area_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>assistance_area_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>business_account_id</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_business_account</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>business_account_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>business_account_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>720</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>consultant_id</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_person</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>consultant_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>consultant_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>crtl_security_id</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>ctrl_security</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>consultant_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>ctrl_carga_id</rename>
-        <default>0</default>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>f_atendimento</name>
+    <name>farm_st</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -833,9 +689,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <schema>dbo</schema>
-    <table>f_atendimento</table>
+    <connection>Cloud ST</connection>
+    <schema/>
+    <table>farm</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -852,52 +708,48 @@
     <return_field/>
     <fields>
       <field>
-        <column_name>local_date</column_name>
-        <stream_name>local_date</stream_name>
+        <column_name>_id_farm</column_name>
+        <stream_name>_id</stream_name>
       </field>
       <field>
-        <column_name>farm_id</column_name>
-        <stream_name>farm_id</stream_name>
+        <column_name>name</column_name>
+        <stream_name>name</stream_name>
       </field>
       <field>
-        <column_name>consultant_id</column_name>
-        <stream_name>consultant_id</stream_name>
-      </field>
-      <field>
-        <column_name>farmer_id</column_name>
-        <stream_name>farmer_id</stream_name>
-      </field>
-      <field>
-        <column_name>crtl_carga_id</column_name>
-        <stream_name>ctrl_carga_id</stream_name>
-      </field>
-      <field>
-        <column_name>cod_ticket</column_name>
-        <stream_name>cod_ticket</stream_name>
-      </field>
-      <field>
-        <column_name>ticket_id</column_name>
-        <stream_name>ticket_id</stream_name>
-      </field>
-      <field>
-        <column_name>business_account_id</column_name>
+        <column_name>_id_business_account</column_name>
         <stream_name>business_account_id</stream_name>
       </field>
       <field>
-        <column_name>assistance_area_id</column_name>
-        <stream_name>assistance_area_id</stream_name>
+        <column_name>_id_farm_route</column_name>
+        <stream_name>farm_route_id</stream_name>
       </field>
       <field>
-        <column_name>rate</column_name>
-        <stream_name>rate</stream_name>
+        <column_name>_id_consultant_user</column_name>
+        <stream_name>consultant_user_id</stream_name>
       </field>
       <field>
-        <column_name>tenant_id</column_name>
-        <stream_name>tenant_id</stream_name>
+        <column_name>size</column_name>
+        <stream_name>size</stream_name>
       </field>
       <field>
-        <column_name>farm_size</column_name>
-        <stream_name>farm_size</stream_name>
+        <column_name>city</column_name>
+        <stream_name>city</stream_name>
+      </field>
+      <field>
+        <column_name>state</column_name>
+        <stream_name>state</stream_name>
+      </field>
+      <field>
+        <column_name>country</column_name>
+        <stream_name>country</stream_name>
+      </field>
+      <field>
+        <column_name>latitude</column_name>
+        <stream_name>latitude</stream_name>
+      </field>
+      <field>
+        <column_name>longitude</column_name>
+        <stream_name>longitude</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -909,71 +761,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1208</xloc>
-      <yloc>256</yloc>
+      <xloc>1232</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>user</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>user</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farm_id</field_name>
-        <field_path>$.farm_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>farm_id</name>
-    <type>DBLookup</type>
+    <name>camel case</name>
+    <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -982,35 +777,21 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_farm</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>farm_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>farm_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-      <value>
-        <name>tenant_id</name>
-        <rename>tenant_id</rename>
-        <default/>
-        <type>None</type>
-      </value>
-    </lookup>
+    <fields>
+      <field>
+        <in_stream_name>name</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>S</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1020,14 +801,96 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>1056</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>filter_null</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>null_address</send_true_to>
+    <send_false_to>ok_address</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>city_address</leftvalue>
+        <function>IS NULL</function>
+        <rightvalue>city_address</rightvalue>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>if_null</name>
+    <type>SetValueField</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>city_address</name>
+        <replaceby>city_areas</replaceby>
+      </field>
+      <field>
+        <name>state_address</name>
+        <replaceby>state_areas</replaceby>
+      </field>
+      <field>
+        <name>country_address</name>
+        <replaceby>country_areas</replaceby>
+      </field>
+      <field>
+        <name>latitude_address</name>
+        <replaceby>latitude_areas</replaceby>
+      </field>
+      <field>
+        <name>longitude_address</name>
+        <replaceby>longitude_areas</replaceby>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>farmer_id</name>
-    <type>DBLookup</type>
+    <name>ok_address</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1036,29 +899,6 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_person</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>farmer_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>farmer_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1068,14 +908,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>464</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>mrg_farm</name>
-    <type>MergeJoin</type>
+    <name>null_address</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1084,15 +924,6 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>srt_01</step1>
-    <step2>srt_02</step2>
-    <keys_1>
-      <key>farmer_id</key>
-    </keys_1>
-    <keys_2>
-      <key>_id</key>
-    </keys_2>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1102,13 +933,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>256</yloc>
+      <xloc>464</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>slc</name>
+    <name>slc_fields_01</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -1120,44 +951,48 @@
     </partitioning>
     <fields>
       <field>
-        <name>date</name>
-        <rename>local_date</rename>
-      </field>
-      <field>
-        <name>farmer_id</name>
-        <rename>farmer_key</rename>
-      </field>
-      <field>
-        <name>consultant_id</name>
-        <rename>consultant_key</rename>
-      </field>
-      <field>
         <name>_id</name>
-        <rename>cod_ticket</rename>
+        <rename/>
+      </field>
+      <field>
+        <name>name</name>
+        <rename/>
       </field>
       <field>
         <name>business_account_id</name>
-        <rename>business_account_key</rename>
+        <rename/>
       </field>
       <field>
-        <name>assistance_area_id</name>
-        <rename>assistance_area_key</rename>
+        <name>farm_route_id</name>
+        <rename/>
       </field>
       <field>
-        <name>rate</name>
+        <name>consultant_user_id</name>
         <rename/>
       </field>
       <field>
         <name>size</name>
-        <rename>farm_size</rename>
-      </field>
-      <field>
-        <name>_id_1</name>
-        <rename>farm_key</rename>
-      </field>
-      <field>
-        <name>ticket_type</name>
         <rename/>
+      </field>
+      <field>
+        <name>city_address</name>
+        <rename>city</rename>
+      </field>
+      <field>
+        <name>state_address</name>
+        <rename>state</rename>
+      </field>
+      <field>
+        <name>country_address</name>
+        <rename>country</rename>
+      </field>
+      <field>
+        <name>latitude_address</name>
+        <rename>latitude</rename>
+      </field>
+      <field>
+        <name>longitude_address</name>
+        <rename>longitude</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1170,14 +1005,149 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>856</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>city</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>"</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>state</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>"</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>"</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1056</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>slc_fields_02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>business_account_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>farm_route_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>consultant_user_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>size</name>
+        <rename/>
+      </field>
+      <field>
+        <name>city_address</name>
+        <rename>city</rename>
+      </field>
+      <field>
+        <name>state_address</name>
+        <rename>state</rename>
+      </field>
+      <field>
+        <name>country_address</name>
+        <rename>country</rename>
+      </field>
+      <field>
+        <name>latitude_address</name>
+        <rename>latitude</rename>
+      </field>
+      <field>
+        <name>longitude_address</name>
+        <rename>longitude</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>srt_01</name>
-    <type>SortRows</type>
+    <name>union</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1186,23 +1156,6 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>farmer_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1212,230 +1165,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt_02</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>304</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ticket</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>ticket</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>date</field_name>
-        <field_path>$.date</field_path>
-        <field_type>Date</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>ticket_type</field_name>
-        <field_path>$.ticket_type</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_area_id</field_name>
-        <field_path>$.assistance_area_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>agrofit_recommendation_id</field_name>
-        <field_path>$.agrofit_recommendation_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>question</field_name>
-        <field_path>$.question</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_description</field_name>
-        <field_path>$.assistance_description</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>consultant_id</field_name>
-        <field_path>$.consultant_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_performed</field_name>
-        <field_path>$.assistance_performed</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_subarea_id</field_name>
-        <field_path>$.assistance_subarea_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>timestamp_canceled</field_name>
-        <field_path>$.timestamp_canceled</field_path>
-        <field_type>Date</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>rate</field_name>
-        <field_path>$.rate</field_path>
-        <field_type>Integer</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farmer_id</field_name>
-        <field_path>$.farmer_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>business_account_id</field_name>
-        <field_path>$.business_account_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>timestamp_close</field_name>
-        <field_path>$.timestamp_close</field_path>
-        <field_type>Date</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>status</field_name>
-        <field_path>$.status</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>timestamp</field_name>
-        <field_path>$.timestamp</field_path>
-        <field_type>Date</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ticket_id</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_ticket</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>ticket_type</name>
-        <field>type</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>ticket_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>400</yloc>
+      <xloc>1056</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
