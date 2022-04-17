@@ -1303,7 +1303,7 @@
       <description/>
       <type>WEBSERVICE_AVAILABLE</type>
       <attributes/>
-      <url>https://api.telegram.org/bot5354541952:AAEyVXzxTEueIqNFv4oFT6VIK0_61h8uZ9U/sendmessage?chat_id=-1001185200252&amp;text=Carga da stage area falhou. Não foi possível acessar o servidor, verifique sua conexão!</url>
+      <url>https://api.telegram.org/bot5354541952:AAEyVXzxTEueIqNFv4oFT6VIK0_61h8uZ9U/sendmessage?chat_id=-1001185200252&amp;text=&lt;b>bold&lt;/b>, &lt;strong>bold&lt;/strong>&lt;i>italic&lt;/i>, &lt;em>italic&lt;/em>&lt;u>underline&lt;/u>, &lt;ins>underline&lt;/ins>&lt;s>strikethrough&lt;/s>, &lt;strike>strikethrough&lt;/strike>, &lt;del>strikethrough&lt;/del>&lt;span class="tg-spoiler">spoiler&lt;/span>, &lt;tg-spoiler>spoiler&lt;/tg-spoiler>&lt;b>bold &lt;i>italic bold &lt;s>italic bold strikethrough &lt;span class="tg-spoiler">italic bold strikethrough spoiler&lt;/span>&lt;/s> &lt;u>underline italic bold&lt;/u>&lt;/i> bold&lt;/b>&lt;a href="http://www.example.com/">inline URL&lt;/a>&lt;a href="tg://user?id=123456789">inline mention of a user&lt;/a>&lt;code>inline fixed-width code&lt;/code>&lt;pre>pre-formatted fixed-width code block&lt;/pre>&lt;pre>&lt;code class="language-python">pre-formatted fixed-width code block written in the Python programming language&lt;/code>&lt;/pre>&amp;parse_mode=HTML</url>
       <connectTimeOut>0</connectTimeOut>
       <readTimeOut>0</readTimeOut>
       <parallel>N</parallel>
