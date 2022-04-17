@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>f_monitoring</name>
+    <name>generate_tables</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,20 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/16 02:49:33.059</created_date>
+    <created_date>2022/04/15 17:31:50.860</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/16 02:49:33.059</modified_date>
+    <modified_date>2022/04/15 17:31:50.860</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>Cloud DW</name>
+    <name>Cloud ST</name>
     <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${CLOUD_DATABASE_DW}</database>
+    <database>${CLOUD_DATABASE_ST}</database>
     <port>${CLOUD_PORT}</port>
     <username>${CLOUD_USERNAME}</username>
     <password>${CLOUD_PASSWORD}</password>
@@ -496,29 +496,34 @@
   </connection>
   <order>
     <hop>
-      <from>De-serialize from file</from>
-      <to>input</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Get rows from result</from>
-      <to>input</to>
+      <from>load_scritps</from>
+      <to>remove_extensions</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>input</from>
-      <to>Select values</to>
+      <from>remove_extensions</from>
+      <to>table_exists</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>f_monitoring_output</to>
+      <from>table_exists</from>
+      <to>only_create</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>only_create</from>
+      <to>create_tables</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>only_create</from>
+      <to>ok</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>De-serialize from file</name>
-    <type>CubeInput</type>
+    <name>create_tables</name>
+    <type>ExecSQLRow</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -527,11 +532,80 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <commit>1</commit>
+    <connection>Cloud ST</connection>
+    <sql_field>contend</sql_field>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <sqlFromfile>N</sqlFromfile>
+    <sendOneStatement>Y</sendOneStatement>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>load_scritps</name>
+    <type>LoadFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>Y</addresultfile>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <IsIgnoreMissingPath>N</IsIgnoreMissingPath>
+    <rownum_field/>
+    <encoding/>
     <file>
-      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\PDI\transformations\cubes\d_collector_user.cube</name>
+      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\Scripts\st</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
     </file>
+    <fields>
+      <field>
+        <name>contend</name>
+        <element_type>content</element_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
     <limit>0</limit>
-    <addfilenameresult>N</addfilenameresult>
+    <IsInFields>N</IsInFields>
+    <DynamicFilenameField/>
+    <shortFileFieldName>filename</shortFileFieldName>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -541,14 +615,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>448</yloc>
+      <xloc>176</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
+    <name>only_create</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -557,7 +631,25 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      </fields>
+    <send_true_to>create_tables</send_true_to>
+    <send_false_to>ok</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>exists</leftvalue>
+        <function>=</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>Boolean</type>
+          <text>N</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask/>
+        </value>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -567,14 +659,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>304</yloc>
+      <xloc>768</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
+    <name>remove_extensions</name>
+    <type>ReplaceString</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -585,175 +677,16 @@
     </partitioning>
     <fields>
       <field>
-        <name>local_date</name>
-      </field>
-      <field>
-        <name>utc_date</name>
-      </field>
-      <field>
-        <name>planting_date</name>
-      </field>
-      <field>
-        <name>consultant_id</name>
-      </field>
-      <field>
-        <name>business_account_id</name>
-      </field>
-      <field>
-        <name>farm_id</name>
-      </field>
-      <field>
-        <name>farm_area_id</name>
-      </field>
-      <field>
-        <name>growth_stage_id</name>
-      </field>
-      <field>
-        <name>crop_type_id</name>
-      </field>
-      <field>
-        <name>prev_crop_type_id</name>
-      </field>
-      <field>
-        <name>crop_tech_id</name>
-      </field>
-      <field>
-        <name>mgmt_type_id</name>
-      </field>
-      <field>
-        <name>mgmt_item_id</name>
-      </field>
-      <field>
-        <name>latitude</name>
-      </field>
-      <field>
-        <name>longitude</name>
-      </field>
-      <field>
-        <name>tenant_id</name>
-      </field>
-      <field>
-        <name>thumbnail_path</name>
-      </field>
-      <field>
-        <name>collector_user_id</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>f_monitoring_output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>Cloud DW</connection>
-    <schema/>
-    <table>f_monitoring</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>local_date</column_name>
-        <stream_name>local_date</stream_name>
-      </field>
-      <field>
-        <column_name>utc_date</column_name>
-        <stream_name>utc_date</stream_name>
-      </field>
-      <field>
-        <column_name>planting_date</column_name>
-        <stream_name>planting_date</stream_name>
-      </field>
-      <field>
-        <column_name>consultant_id</column_name>
-        <stream_name>consultant_id</stream_name>
-      </field>
-      <field>
-        <column_name>business_account_id</column_name>
-        <stream_name>business_account_id</stream_name>
-      </field>
-      <field>
-        <column_name>farm_id</column_name>
-        <stream_name>farm_id</stream_name>
-      </field>
-      <field>
-        <column_name>farm_area_id</column_name>
-        <stream_name>farm_area_id</stream_name>
-      </field>
-      <field>
-        <column_name>growth_stage_id</column_name>
-        <stream_name>growth_stage_id</stream_name>
-      </field>
-      <field>
-        <column_name>crop_type_id</column_name>
-        <stream_name>crop_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>prev_crop_type_id</column_name>
-        <stream_name>prev_crop_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>crop_tech_id</column_name>
-        <stream_name>crop_tech_id</stream_name>
-      </field>
-      <field>
-        <column_name>mgmt_type_id</column_name>
-        <stream_name>mgmt_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>mgmt_item_id</column_name>
-        <stream_name>mgmt_item_id</stream_name>
-      </field>
-      <field>
-        <column_name>latitude</column_name>
-        <stream_name>latitude</stream_name>
-      </field>
-      <field>
-        <column_name>longitude</column_name>
-        <stream_name>longitude</stream_name>
-      </field>
-      <field>
-        <column_name>tenant_id</column_name>
-        <stream_name>tenant_id</stream_name>
-      </field>
-      <field>
-        <column_name>thumbnail_path</column_name>
-        <stream_name>thumbnail_path</stream_name>
-      </field>
-      <field>
-        <column_name>collector_user_id</column_name>
-        <stream_name>collector_user_id</stream_name>
+        <in_stream_name>filename</in_stream_name>
+        <out_stream_name>table_name</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>.sql</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
       </field>
     </fields>
     <attributes/>
@@ -765,13 +698,42 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>304</yloc>
+      <xloc>376</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>input</name>
+    <name>table_exists</name>
+    <type>TableExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Cloud ST</connection>
+    <tablenamefield>table_name</tablenamefield>
+    <resultfieldname>exists</resultfieldname>
+    <schemaname/>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ok</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -790,8 +752,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>304</yloc>
+      <xloc>768</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

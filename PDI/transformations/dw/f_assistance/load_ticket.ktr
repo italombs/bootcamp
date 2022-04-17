@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>f_monitoring</name>
+    <name>load_ticket</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,20 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/16 02:49:33.059</created_date>
+    <created_date>2022/04/16 10:46:58.095</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/16 02:49:33.059</modified_date>
+    <modified_date>2022/04/16 10:46:58.095</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>Cloud DW</name>
+    <name>Cloud ST</name>
     <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${CLOUD_DATABASE_DW}</database>
+    <database>${CLOUD_DATABASE_ST}</database>
     <port>${CLOUD_PORT}</port>
     <username>${CLOUD_USERNAME}</username>
     <password>${CLOUD_PASSWORD}</password>
@@ -496,29 +496,44 @@
   </connection>
   <order>
     <hop>
-      <from>De-serialize from file</from>
-      <to>input</to>
+      <from>load_ticket</from>
+      <to>Copy rows to result</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>load_ticket</from>
+      <to>Serialize to file</to>
       <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Get rows from result</from>
-      <to>input</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>input</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>f_monitoring_output</to>
-      <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>De-serialize from file</name>
-    <type>CubeInput</type>
+    <name>Copy rows to result</name>
+    <type>RowsToResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Serialize to file</name>
+    <type>CubeOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -528,10 +543,287 @@
       <schema_name/>
     </partitioning>
     <file>
-      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\PDI\transformations\cubes\d_collector_user.cube</name>
+      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\PDI\transformations\cubes\load_ticket.cube</name>
+      <add_to_result_filenames>N</add_to_result_filenames>
+      <do_not_open_newfile_init>N</do_not_open_newfile_init>
     </file>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>load_ticket</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Cloud ST</connection>
+    <sql>SELECT
+  _id_ticket
+, "date"
+, ticket_type
+, status
+, _id_assistance_area
+, _id_assistance_subarea
+, _id_farmer
+, _id_consultant
+, _id_business_account
+, rate
+FROM dbo.ticket
+</sql>
     <limit>0</limit>
-    <addfilenameresult>N</addfilenameresult>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_ticket</name>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_ticket</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Date</type>
+        <storagetype>normal</storagetype>
+        <name>date</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>date</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ticket_type</name>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ticket_type</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>status</name>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>status</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_assistance_area</name>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_assistance_area</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_assistance_subarea</name>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_assistance_subarea</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_farmer</name>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_farmer</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_consultant</name>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_consultant</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_business_account</name>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>_id_business_account</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>rate</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>rate</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -542,256 +834,7 @@
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>local_date</name>
-      </field>
-      <field>
-        <name>utc_date</name>
-      </field>
-      <field>
-        <name>planting_date</name>
-      </field>
-      <field>
-        <name>consultant_id</name>
-      </field>
-      <field>
-        <name>business_account_id</name>
-      </field>
-      <field>
-        <name>farm_id</name>
-      </field>
-      <field>
-        <name>farm_area_id</name>
-      </field>
-      <field>
-        <name>growth_stage_id</name>
-      </field>
-      <field>
-        <name>crop_type_id</name>
-      </field>
-      <field>
-        <name>prev_crop_type_id</name>
-      </field>
-      <field>
-        <name>crop_tech_id</name>
-      </field>
-      <field>
-        <name>mgmt_type_id</name>
-      </field>
-      <field>
-        <name>mgmt_item_id</name>
-      </field>
-      <field>
-        <name>latitude</name>
-      </field>
-      <field>
-        <name>longitude</name>
-      </field>
-      <field>
-        <name>tenant_id</name>
-      </field>
-      <field>
-        <name>thumbnail_path</name>
-      </field>
-      <field>
-        <name>collector_user_id</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>f_monitoring_output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>Cloud DW</connection>
-    <schema/>
-    <table>f_monitoring</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>local_date</column_name>
-        <stream_name>local_date</stream_name>
-      </field>
-      <field>
-        <column_name>utc_date</column_name>
-        <stream_name>utc_date</stream_name>
-      </field>
-      <field>
-        <column_name>planting_date</column_name>
-        <stream_name>planting_date</stream_name>
-      </field>
-      <field>
-        <column_name>consultant_id</column_name>
-        <stream_name>consultant_id</stream_name>
-      </field>
-      <field>
-        <column_name>business_account_id</column_name>
-        <stream_name>business_account_id</stream_name>
-      </field>
-      <field>
-        <column_name>farm_id</column_name>
-        <stream_name>farm_id</stream_name>
-      </field>
-      <field>
-        <column_name>farm_area_id</column_name>
-        <stream_name>farm_area_id</stream_name>
-      </field>
-      <field>
-        <column_name>growth_stage_id</column_name>
-        <stream_name>growth_stage_id</stream_name>
-      </field>
-      <field>
-        <column_name>crop_type_id</column_name>
-        <stream_name>crop_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>prev_crop_type_id</column_name>
-        <stream_name>prev_crop_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>crop_tech_id</column_name>
-        <stream_name>crop_tech_id</stream_name>
-      </field>
-      <field>
-        <column_name>mgmt_type_id</column_name>
-        <stream_name>mgmt_type_id</stream_name>
-      </field>
-      <field>
-        <column_name>mgmt_item_id</column_name>
-        <stream_name>mgmt_item_id</stream_name>
-      </field>
-      <field>
-        <column_name>latitude</column_name>
-        <stream_name>latitude</stream_name>
-      </field>
-      <field>
-        <column_name>longitude</column_name>
-        <stream_name>longitude</stream_name>
-      </field>
-      <field>
-        <column_name>tenant_id</column_name>
-        <stream_name>tenant_id</stream_name>
-      </field>
-      <field>
-        <column_name>thumbnail_path</column_name>
-        <stream_name>thumbnail_path</stream_name>
-      </field>
-      <field>
-        <column_name>collector_user_id</column_name>
-        <stream_name>collector_user_id</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>input</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>304</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

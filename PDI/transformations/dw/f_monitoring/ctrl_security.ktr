@@ -427,20 +427,79 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/09 17:24:28.082</created_date>
+    <created_date>2022/04/16 10:23:54.770</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/09 17:24:28.082</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/04/16 10:23:54.770</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>SQL GoogleCloud</name>
+    <name>Cloud DW</name>
     <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${CLOUD_DATABASE}</database>
+    <database>${CLOUD_DATABASE_DW}</database>
+    <port>${CLOUD_PORT}</port>
+    <username>${CLOUD_USERNAME}</username>
+    <password>${CLOUD_PASSWORD}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>${CLOUD_PORT}</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Cloud ST</name>
+    <server>${CLOUD_SERVER}</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>${CLOUD_DATABASE_ST}</database>
     <port>${CLOUD_PORT}</port>
     <username>${CLOUD_USERNAME}</username>
     <password>${CLOUD_PASSWORD}</password>
@@ -496,131 +555,44 @@
   </connection>
   <order>
     <hop>
-      <from>profile</from>
-      <to>srt02</to>
+      <from>load_user</from>
+      <to>with_tenant_id</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>user</from>
-      <to>srt01</to>
+      <from>with_tenant_id</from>
+      <to>without_tenant_id</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt01</from>
-      <to>mrg_profile</to>
+      <from>with_tenant_id</from>
+      <to>ok</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>srt02</from>
-      <to>mrg_profile</to>
+      <from>ok</from>
+      <to>lkp: d_person</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>mrg_profile</from>
-      <to>out01</to>
+      <from>d_person</from>
+      <to>lkp: d_person</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>out01</from>
-      <to>slc01</to>
+      <from>lkp: d_person</from>
+      <to>remove_lkp</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>slc01</from>
-      <to>srt03</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>business_account</from>
-      <to>srt04</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt03</from>
-      <to>mrg_business_account</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>srt04</from>
-      <to>mrg_business_account</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>mrg_business_account</from>
-      <to>slc02</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>slc02</from>
-      <to>dbl:person_id</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dbl:person_id</from>
-      <to>dlu:ctrl_security</to>
+      <from>remove_lkp</from>
+      <to>ctrl_security</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>business_account</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>business_account</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>dbl:person_id</name>
-    <type>DBLookup</type>
+    <name>load_user</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -629,106 +601,138 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
-    <lookup>
-      <schema>dbo</schema>
-      <table>d_person</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>user_key</name>
-        <field>mongo_key</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>person_id</rename>
-        <default>0</default>
-        <type>None</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1136</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>dlu:ctrl_security</name>
-    <type>DimensionLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <schema>dbo</schema>
-    <table>ctrl_security</table>
-    <connection>SQL GoogleCloud</connection>
-    <commit>100</commit>
-    <update>Y</update>
-    <fields>
-      <key>
+    <connection>Cloud ST</connection>
+    <sql>   SELECT A.email                                                       AS email
+        , CASE C.[name] WHEN 'Agroneural' THEN 'root' ELSE B.[type] END AS [role]
+        , A._id_business_account                                        AS tenantid_current
+   	    , C.[name]                                                      AS business_account
+        , A.[uid]                                                       AS [uid]                     
+	 FROM [user]           A
+     JOIN [profile]        B ON A._id_profile          = B._id_profile
+LEFT JOIN business_account	C ON A._id_business_account = C._id_business_account</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
         <name>email</name>
-        <lookup>email</lookup>
-      </key>
-      <key>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>load_user</origin>
+        <comments>email</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
         <name>role</name>
-        <lookup>role</lookup>
-      </key>
-      <key>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>load_user</origin>
+        <comments>role</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
         <name>tenantid_current</name>
-        <lookup>tenantid_current</lookup>
-      </key>
-      <key>
+        <length>24</length>
+        <precision>-1</precision>
+        <origin>load_user</origin>
+        <comments>tenantid_current</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
         <name>business_account</name>
-        <lookup>business_account</lookup>
-      </key>
-      <key>
-        <name>person_id</name>
-        <lookup>person_id</lookup>
-      </key>
-      <key>
-        <name>user_key</name>
-        <lookup>mongo_key</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <return>
-        <name>id</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
-    </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>load_user</origin>
+        <comments>business_account</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>uid</name>
+        <length>20</length>
+        <precision>-1</precision>
+        <origin>load_user</origin>
+        <comments>uid</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -738,14 +742,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1336</xloc>
-      <yloc>400</yloc>
+      <xloc>80</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>mrg_business_account</name>
-    <type>MergeJoin</type>
+    <name>with_tenant_id</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -754,15 +758,16 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>srt03</step1>
-    <step2>srt04</step2>
-    <keys_1>
-      <key>tenantid_current</key>
-    </keys_1>
-    <keys_2>
-      <key>_id</key>
-    </keys_2>
+    <send_true_to>ok</send_true_to>
+    <send_false_to>without_tenant_id</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>tenantid_current</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -772,47 +777,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>400</yloc>
+      <xloc>272</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>mrg_profile</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <step1>srt01</step1>
-    <step2>srt02</step2>
-    <keys_1>
-      <key>profile_id</key>
-    </keys_1>
-    <keys_2>
-      <key>_id</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>544</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>out01</name>
+    <name>without_tenant_id</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -831,59 +802,22 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>112</yloc>
+      <xloc>272</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>profile</name>
-    <type>MongoDbInput</type>
+    <name>ok</name>
+    <type>Dummy</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>profile</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>pt_BR</field_name>
-        <field_path>$.name.pt_BR</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>type</field_name>
-        <field_path>$.type</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -893,13 +827,212 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>112</yloc>
+      <xloc>464</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>slc01</name>
+    <name>d_person</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Cloud DW</connection>
+    <sql>SELECT
+  id
+, uid
+, version
+, date_from
+, date_to
+FROM dbo.d_person
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>id</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>id</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>uid</name>
+        <length>20</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>uid</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>version</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>version</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
+        <storagetype>normal</storagetype>
+        <name>date_from</name>
+        <length>3</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>date_from</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
+        <storagetype>normal</storagetype>
+        <name>date_to</name>
+        <length>3</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>date_to</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>lkp: d_person</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>d_person</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>uid</name>
+        <field>uid</field>
+      </key>
+      <value>
+        <name>id</name>
+        <rename>person_id</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>remove_lkp</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -912,68 +1045,23 @@
     <fields>
       <field>
         <name>email</name>
-      </field>
-      <field>
-        <name>type</name>
-        <rename>role</rename>
-      </field>
-      <field>
-        <name>business_account_id</name>
-        <rename>tenantid_current</rename>
-      </field>
-      <field>
-        <name>user_type_id</name>
-      </field>
-      <field>
-        <name>farm_id</name>
-      </field>
-      <field>
-        <name>_id</name>
-        <rename>user_key</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>slc02</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>email</name>
+        <rename/>
       </field>
       <field>
         <name>role</name>
+        <rename/>
       </field>
       <field>
         <name>tenantid_current</name>
+        <rename/>
       </field>
       <field>
-        <name>name</name>
-        <rename>business_account</rename>
+        <name>business_account</name>
+        <rename/>
       </field>
       <field>
-        <name>user_key</name>
+        <name>person_id</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -986,14 +1074,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>984</xloc>
-      <yloc>400</yloc>
+      <xloc>800</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>srt01</name>
-    <type>SortRows</type>
+    <name>ctrl_security</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1002,21 +1090,43 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
+    <connection>Cloud DW</connection>
+    <schema/>
+    <table>ctrl_security</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <name>profile_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
+        <column_name>email</column_name>
+        <stream_name>email</stream_name>
+      </field>
+      <field>
+        <column_name>role</column_name>
+        <stream_name>role</stream_name>
+      </field>
+      <field>
+        <column_name>tenantid_current</column_name>
+        <stream_name>tenantid_current</stream_name>
+      </field>
+      <field>
+        <column_name>business_account</column_name>
+        <stream_name>business_account</stream_name>
+      </field>
+      <field>
+        <column_name>person_id</column_name>
+        <stream_name>person_id</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -1028,226 +1138,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>344</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt02</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>344</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt03</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>tenantid_current</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>srt04</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>_id</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>user</name>
-    <type>MongoDbInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <hostname>${MONGO_SERVER}</hostname>
-    <port>${MONGO_PORT}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>user</collection>
-    <json_field_name>json</json_field_name>
-    <json_query/>
-    <auth_database>admin</auth_database>
-    <auth_user>${MONGO_USERNAME}</auth_user>
-    <auth_password>${MONGO_PASSWORD}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>N</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>business_account_id</field_name>
-        <field_path>$.business_account_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>powerbi_account</field_name>
-        <field_path>$.powerbi_account</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>uid</field_name>
-        <field_path>$.uid</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>profile_id</field_name>
-        <field_path>$.profile_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>name</field_name>
-        <field_path>$.name</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>user_type_id</field_name>
-        <field_path>$.user_type_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>email</field_name>
-        <field_path>$.email</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farm_id</field_name>
-        <field_path>$.farm_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>144</xloc>
-      <yloc>288</yloc>
+      <xloc>976</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

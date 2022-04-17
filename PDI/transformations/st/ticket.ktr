@@ -430,7 +430,7 @@
     <created_date>2022/04/15 18:11:08.580</created_date>
     <modified_user>-</modified_user>
     <modified_date>2022/04/15 18:11:08.580</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -534,7 +534,8 @@
             }
         },
         assistance_area_id: 1,
-        assistance_subarea_id: 1
+        assistance_subarea_id: 1,
+		rate: 1
     }
 }]</json_query>
     <auth_database>admin</auth_database>
@@ -594,6 +595,11 @@
         <field_name>status</field_name>
         <field_path>$.status</field_path>
         <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>rate</field_name>
+        <field_path>$.rate</field_path>
+        <field_type>Integer</field_type>
       </mongo_field>
     </mongo_fields>
     <attributes/>
@@ -674,6 +680,10 @@
       <field>
         <column_name>_id_business_account</column_name>
         <stream_name>business_account_id</stream_name>
+      </field>
+      <field>
+        <column_name>rate</column_name>
+        <stream_name>rate</stream_name>
       </field>
     </fields>
     <attributes/>

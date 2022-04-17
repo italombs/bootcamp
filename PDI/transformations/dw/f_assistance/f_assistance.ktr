@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>create_schema</name>
+    <name>f_assistance</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,79 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/10 00:27:31.526</created_date>
+    <created_date>2022/04/16 18:05:56.847</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/10 00:27:31.526</modified_date>
+    <modified_date>2022/04/16 18:05:56.847</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>GoogleCloud</name>
+    <name>Cloud DW</name>
     <server>${CLOUD_SERVER}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${CLOUD_DATABASE}</database>
-    <port>${CLOUD_PORT}</port>
-    <username>${CLOUD_USERNAME}</username>
-    <password>${CLOUD_PASSWORD}</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQLUseIntegratedSecurity</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>${CLOUD_PORT}</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>SQL GoogleCloud</name>
-    <server>${CLOUD_SERVER}</server>
-    <type>MSSQLNATIVE</type>
-    <access>Native</access>
-    <database>${CLOUD_DATABASE}</database>
+    <database>${CLOUD_DATABASE_DW}</database>
     <port>${CLOUD_PORT}</port>
     <username>${CLOUD_USERNAME}</username>
     <password>${CLOUD_PASSWORD}</password>
@@ -555,34 +496,24 @@
   </connection>
   <order>
     <hop>
-      <from>estrutura_db</from>
-      <to>remover_extensao</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>remover_extensao</from>
-      <to>saida_database</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>saida_database</from>
-      <to>verificar_bd</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>verificar_bd</from>
-      <to>only_create</to>
+      <from>De-serialize from file</from>
+      <to>input</to>
       <enabled>N</enabled>
     </hop>
     <hop>
-      <from>only_create</from>
-      <to>create_tables</to>
+      <from>input</from>
+      <to>f_assistance_out</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get rows from result</from>
+      <to>input</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>create_tables</name>
-    <type>ExecSQLRow</type>
+    <name>De-serialize from file</name>
+    <type>CubeInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -591,80 +522,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <commit>1</commit>
-    <connection>GoogleCloud</connection>
-    <sql_field>content</sql_field>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <sqlFromfile>N</sqlFromfile>
-    <sendOneStatement>Y</sendOneStatement>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1040</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>estrutura_db</name>
-    <type>LoadFileInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <addresultfile>Y</addresultfile>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <IsIgnoreMissingPath>N</IsIgnoreMissingPath>
-    <rownum_field/>
-    <encoding/>
     <file>
-      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\Scripts</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\italo\OneDrive\Documentos\GitHub\bootcamp\PDI\transformations\cubes\d_assistance_area.cube</name>
     </file>
-    <fields>
-      <field>
-        <name>content</name>
-        <element_type>content</element_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
     <limit>0</limit>
-    <IsInFields>N</IsInFields>
-    <DynamicFilenameField/>
-    <shortFileFieldName>filename</shortFileFieldName>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
+    <addfilenameresult>N</addfilenameresult>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -674,14 +536,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>192</yloc>
+      <xloc>144</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>only_create</name>
-    <type>FilterRows</type>
+    <name>f_assistance_out</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -690,62 +552,75 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to/>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>exists</leftvalue>
-        <function>=</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>Boolean</type>
-          <text>N</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>remover_extensao</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
+    <connection>Cloud DW</connection>
+    <schema/>
+    <table>f_assistance</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <in_stream_name>filename</in_stream_name>
-        <out_stream_name>table</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>.sql</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-        <is_unicode>no</is_unicode>
+        <column_name>local_date</column_name>
+        <stream_name>local_date</stream_name>
+      </field>
+      <field>
+        <column_name>farm_id</column_name>
+        <stream_name>farm_id</stream_name>
+      </field>
+      <field>
+        <column_name>consultant_id</column_name>
+        <stream_name>consultant_id</stream_name>
+      </field>
+      <field>
+        <column_name>farmer_id</column_name>
+        <stream_name>farmer_id</stream_name>
+      </field>
+      <field>
+        <column_name>cod_ticket</column_name>
+        <stream_name>cod_ticket</stream_name>
+      </field>
+      <field>
+        <column_name>ticket_id</column_name>
+        <stream_name>ticket_id</stream_name>
+      </field>
+      <field>
+        <column_name>business_account_id</column_name>
+        <stream_name>business_account_id</stream_name>
+      </field>
+      <field>
+        <column_name>assistance_area_id</column_name>
+        <stream_name>assistance_area_id</stream_name>
+      </field>
+      <field>
+        <column_name>rate</column_name>
+        <stream_name>rate</stream_name>
+      </field>
+      <field>
+        <column_name>tenant_id</column_name>
+        <stream_name>tenant_id</stream_name>
+      </field>
+      <field>
+        <column_name>farm_size</column_name>
+        <stream_name>farm_size</stream_name>
+      </field>
+      <field>
+        <column_name>farm_size_name</column_name>
+        <stream_name>farm_size_name</stream_name>
+      </field>
+      <field>
+        <column_name>status</column_name>
+        <stream_name>status</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -757,13 +632,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>312</xloc>
-      <yloc>192</yloc>
+      <xloc>552</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>saida_database</name>
+    <name>input</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -782,14 +657,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>192</yloc>
+      <xloc>352</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>verificar_bd</name>
-    <type>TableExists</type>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -798,10 +673,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQL GoogleCloud</connection>
-    <tablenamefield>table</tablenamefield>
-    <resultfieldname>exists</resultfieldname>
-    <schemaname/>
+    <fields>      </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -811,8 +683,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>192</yloc>
+      <xloc>144</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
