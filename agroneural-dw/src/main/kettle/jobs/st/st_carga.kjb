@@ -368,20 +368,6 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Check DB connections</name>
-      <description/>
-      <type>CHECK_DB_CONNECTIONS</type>
-      <attributes/>
-      <connections>
-      </connections>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>368</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
       <name>carga_control</name>
       <description/>
       <type>TRANS</type>
@@ -455,7 +441,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
@@ -494,7 +480,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>80</yloc>
       <attributes_kjc/>
     </entry>
@@ -533,7 +519,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
@@ -572,7 +558,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>880</xloc>
       <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
@@ -611,7 +597,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
@@ -650,7 +636,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
@@ -689,7 +675,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>880</xloc>
       <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
@@ -728,7 +714,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -767,7 +753,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -806,7 +792,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>880</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -845,7 +831,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
@@ -884,7 +870,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -923,7 +909,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -962,7 +948,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>880</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -1001,7 +987,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>880</xloc>
       <yloc>592</yloc>
       <attributes_kjc/>
     </entry>
@@ -1040,7 +1026,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>592</yloc>
       <attributes_kjc/>
     </entry>
@@ -1079,7 +1065,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>592</yloc>
       <attributes_kjc/>
     </entry>
@@ -1118,7 +1104,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>704</xloc>
       <yloc>704</yloc>
       <attributes_kjc/>
     </entry>
@@ -1210,7 +1196,7 @@
       <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>368</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -1249,7 +1235,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1056</xloc>
       <yloc>704</yloc>
       <attributes_kjc/>
     </entry>
@@ -1300,30 +1286,12 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>208</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Start</from>
-      <to>Check DB connections</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Check DB connections</from>
-      <to>carga_control</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>carga_control</from>
       <to>clean_incomplete_loads</to>
@@ -1568,8 +1536,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check DB connections</from>
-      <to>check_schema</to>
+      <from>check_schema</from>
+      <to>clean_incomplete_loads</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1577,11 +1545,20 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>check_schema</from>
-      <to>clean_incomplete_loads</to>
+      <from>Start</from>
+      <to>check_schema</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>check_schema</from>
+      <to>carga_control</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
