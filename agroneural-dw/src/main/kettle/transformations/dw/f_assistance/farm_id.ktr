@@ -596,16 +596,16 @@
     </hop>
     <hop>
       <from>farm_st</from>
-      <to>dlk: farm_size</to>
+      <to>lkp: farm_size</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>lkp: d_farm_id</from>
-      <to>dlk: farm_size</to>
+      <to>lkp: farm_size</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dlk: farm_size</from>
+      <from>lkp: farm_size</from>
       <to>lkp: farm_id</to>
       <enabled>Y</enabled>
     </hop>
@@ -736,7 +736,6 @@
     <sql>SELECT
   id
 , cod_farm
-, size_name
 , version
 , date_from
 , date_to
@@ -903,48 +902,6 @@ FROM dbo.d_farm
     </GUI>
   </step>
   <step>
-    <name>dlk: farm_size</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>farm_st</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>_id_farm</name>
-        <field>_id_farm</field>
-      </key>
-      <value>
-        <name>size</name>
-        <rename>size</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>farm_st</name>
     <type>TableInput</type>
     <description/>
@@ -1081,12 +1038,6 @@ FROM dbo.farm
         <default>0</default>
         <type>Integer</type>
       </value>
-      <value>
-        <name>size_name</name>
-        <rename>size_name</rename>
-        <default/>
-        <type>String</type>
-      </value>
     </lookup>
     <attributes/>
     <cluster_schema/>
@@ -1113,7 +1064,7 @@ FROM dbo.farm
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <from>dlk: farm_size</from>
+    <from>lkp: farm_size</from>
     <input_sorted>N</input_sorted>
     <preserve_memory>Y</preserve_memory>
     <sorted_list>N</sorted_list>
@@ -1135,12 +1086,6 @@ FROM dbo.farm
         <default/>
         <type>Integer</type>
       </value>
-      <value>
-        <name>size_name</name>
-        <rename>size_name</rename>
-        <default/>
-        <type>String</type>
-      </value>
     </lookup>
     <attributes/>
     <cluster_schema/>
@@ -1153,6 +1098,48 @@ FROM dbo.farm
     <GUI>
       <xloc>528</xloc>
       <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>lkp: farm_size</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>farm_st</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>_id_farm</name>
+        <field>_id_farm</field>
+      </key>
+      <value>
+        <name>size</name>
+        <rename>size</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1174,6 +1161,7 @@ FROM dbo.farm
       </field>
       <field>
         <name>farm_id</name>
+        <rename/>
       </field>
       <field>
         <name>_id_ticket</name>
@@ -1181,33 +1169,39 @@ FROM dbo.farm
       </field>
       <field>
         <name>ticket_type</name>
+        <rename/>
       </field>
       <field>
         <name>status</name>
+        <rename/>
       </field>
       <field>
         <name>_id_assistance_area</name>
+        <rename/>
       </field>
       <field>
         <name>_id_assistance_subarea</name>
+        <rename/>
       </field>
       <field>
         <name>_id_farmer</name>
+        <rename/>
       </field>
       <field>
         <name>_id_consultant</name>
+        <rename/>
       </field>
       <field>
         <name>_id_business_account</name>
+        <rename/>
       </field>
       <field>
         <name>rate</name>
+        <rename/>
       </field>
       <field>
         <name>size</name>
-      </field>
-      <field>
-        <name>size_name</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

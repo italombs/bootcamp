@@ -472,7 +472,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/italo/OneDrive/Documentos/GitHub/bootcamp/PDI/transformations/dw/d_farm.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/dimensions/d_farm.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -500,8 +500,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1569</xloc>
-      <yloc>990</yloc>
+      <xloc>944</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -539,8 +539,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1168</xloc>
-      <yloc>544</yloc>
+      <xloc>1104</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -578,7 +578,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>624</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -617,7 +617,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
+      <xloc>944</xloc>
       <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
@@ -656,7 +656,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
+      <xloc>464</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -667,7 +667,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/italo/OneDrive/Documentos/GitHub/bootcamp/PDI/transformations/dw/d_mgmt_item.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/dimensions/d_mgmt_item.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -695,8 +695,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1569</xloc>
-      <yloc>862</yloc>
+      <xloc>624</xloc>
+      <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -734,8 +734,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
-      <yloc>544</yloc>
+      <xloc>1280</xloc>
+      <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -745,7 +745,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/italo/OneDrive/Documentos/GitHub/bootcamp/PDI/transformations/dw/d_mgmt_type.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/dimensions/d_mgmt_type.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -773,8 +773,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1569</xloc>
-      <yloc>734</yloc>
+      <xloc>784</xloc>
+      <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -812,7 +812,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
+      <xloc>1104</xloc>
       <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
@@ -851,7 +851,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1168</xloc>
+      <xloc>784</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -943,6 +943,84 @@
       <yloc>544</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>d_rate</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/dimensions/d_rate.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>288</xloc>
+      <yloc>544</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>d_farm_size</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/dimensions/d_farm_size.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>544</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1000,15 +1078,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>d_growth_stage</from>
-      <to>d_farm_area</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>d_farm_area</from>
       <to>d_ticket</to>
       <from_nr>0</from_nr>
@@ -1036,15 +1105,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>d_business_account</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>check_schema</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
@@ -1061,6 +1121,69 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>d_rate</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_farm_size</from>
+      <to>d_rate</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_growth_stage</from>
+      <to>d_farm</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_farm</from>
+      <to>d_farm_area</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_mgmt_item</from>
+      <to>d_farm_size</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_business_account</from>
+      <to>d_mgmt_type</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>d_mgmt_type</from>
+      <to>d_mgmt_item</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

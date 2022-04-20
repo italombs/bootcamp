@@ -1458,42 +1458,51 @@ FROM dbo.d_assistance_area
     <fields>
       <field>
         <name>local_date</name>
+        <rename/>
       </field>
       <field>
         <name>farm_id</name>
+        <rename/>
       </field>
       <field>
         <name>consultant_id</name>
+        <rename/>
       </field>
       <field>
         <name>farmer_id</name>
+        <rename/>
       </field>
       <field>
         <name>cod_ticket</name>
+        <rename/>
       </field>
       <field>
         <name>ticket_id</name>
+        <rename/>
       </field>
       <field>
         <name>business_account_id</name>
+        <rename/>
       </field>
       <field>
         <name>assistance_area_id</name>
+        <rename/>
       </field>
       <field>
         <name>rate</name>
+        <rename/>
       </field>
       <field>
         <name>tenant_id</name>
+        <rename/>
       </field>
       <field>
         <name>farm_size</name>
-      </field>
-      <field>
-        <name>farm_size_name</name>
+        <rename/>
       </field>
       <field>
         <name>status</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

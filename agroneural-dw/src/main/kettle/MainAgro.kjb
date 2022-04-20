@@ -13,7 +13,7 @@
   <parameters>
     <parameter>
       <name>CONFIG_FILE</name>
-      <default_value/>
+      <default_value>C:\agroneural-dw\src\main\resources\config-local.properties</default_value>
       <description/>
     </parameter>
   </parameters>
@@ -470,7 +470,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>432</xloc>
       <yloc>160</yloc>
       <attributes_kjc/>
     </entry>
@@ -714,6 +714,41 @@
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>-----------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------  file: config-local.properties  --------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+Configura e carrega variáveis de ambiente com os dados de conexão com base no arquivo config-local.properties.
+</note>
+      <xloc>192</xloc>
+      <yloc>64</yloc>
+      <width>665</width>
+      <heigth>239</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

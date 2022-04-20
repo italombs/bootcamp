@@ -545,11 +545,15 @@
           <name>user_type</name>
           <schemaname/>
         </field>
+        <field>
+          <name>ticket_history</name>
+          <schemaname/>
+        </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
+      <xloc>688</xloc>
       <yloc>112</yloc>
       <attributes_kjc/>
     </entry>
@@ -681,8 +685,8 @@
 Limpar ST: Apaga toda a área do stage
 
 Delete files: Limpa folder dos dados armazenados para simulações</note>
-      <xloc>608</xloc>
-      <yloc>32</yloc>
+      <xloc>640</xloc>
+      <yloc>48</yloc>
       <width>359</width>
       <heigth>375</heigth>
       <fontname>Segoe UI</fontname>

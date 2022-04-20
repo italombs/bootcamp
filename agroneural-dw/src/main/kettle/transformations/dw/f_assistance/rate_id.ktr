@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ticket_id</name>
+    <name>rate_id</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/16 11:34:58.014</created_date>
+    <created_date>2022/04/19 14:21:38.879</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/16 11:34:58.014</modified_date>
+    <modified_date>2022/04/19 14:21:38.879</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -507,28 +507,28 @@
     </hop>
     <hop>
       <from>input</from>
-      <to>ticket_id</to>
+      <to>lkp: d_rate_id</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>d_ticket</from>
-      <to>ticket_id</to>
+      <from>rate_id</from>
+      <to>lkp: d_rate_id</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>ticket_id</from>
-      <to>remove_lkp</to>
+      <from>lkp: d_rate_id</from>
+      <to>slc_output</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>remove_lkp</from>
-      <to>Copy rows to result</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>remove_lkp</from>
+      <from>slc_output</from>
       <to>Serialize to file</to>
       <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>slc_output</from>
+      <to>Copy rows to result</to>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <step>
@@ -551,8 +551,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>856</xloc>
-      <yloc>288</yloc>
+      <xloc>944</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -568,7 +568,7 @@
       <schema_name/>
     </partitioning>
     <file>
-      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_farmer_assistance.cube</name>
+      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_assistance_area.cube</name>
     </file>
     <limit>0</limit>
     <addfilenameresult>N</addfilenameresult>
@@ -581,8 +581,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>416</yloc>
+      <xloc>144</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -607,8 +607,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>288</yloc>
+      <xloc>144</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -624,7 +624,7 @@
       <schema_name/>
     </partitioning>
     <file>
-      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_ticket_assistance.cube</name>
+      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_rate_assistance.cube</name>
       <add_to_result_filenames>N</add_to_result_filenames>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
     </file>
@@ -637,13 +637,80 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>416</yloc>
+      <xloc>944</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>d_ticket</name>
+    <name>input</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>lkp: d_rate_id</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>rate_id</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>rate</name>
+        <field>rate</field>
+      </key>
+      <value>
+        <name>id</name>
+        <rename>rate_id</rename>
+        <default>0</default>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>rate_id</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -656,11 +723,11 @@
     <connection>Cloud DW</connection>
     <sql>SELECT
   id
-, type
+, rate
 , version
 , date_from
 , date_to
-FROM dbo.d_ticket
+FROM dbo.d_rate
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -675,7 +742,7 @@ FROM dbo.d_ticket
         <name>id</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>rate_id</origin>
         <comments>id</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -693,14 +760,14 @@ FROM dbo.d_ticket
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>type</name>
-        <length>64</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>type</comments>
-        <conversion_Mask/>
+        <name>rate</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>rate_id</origin>
+        <comments>rate</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -721,7 +788,7 @@ FROM dbo.d_ticket
         <name>version</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>rate_id</origin>
         <comments>version</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -744,7 +811,7 @@ FROM dbo.d_ticket
         <name>date_from</name>
         <length>3</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>rate_id</origin>
         <comments>date_from</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -767,7 +834,7 @@ FROM dbo.d_ticket
         <name>date_to</name>
         <length>3</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>rate_id</origin>
         <comments>date_to</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -794,41 +861,16 @@ FROM dbo.d_ticket
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
+      <xloc>544</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>input</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>remove_lkp</name>
+    <name>slc_output</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -838,51 +880,39 @@ FROM dbo.d_ticket
     <fields>
       <field>
         <name>local_date</name>
-        <rename/>
       </field>
       <field>
         <name>farm_id</name>
-        <rename/>
       </field>
       <field>
         <name>consultant_id</name>
-        <rename/>
       </field>
       <field>
         <name>farmer_id</name>
-        <rename/>
       </field>
       <field>
         <name>cod_ticket</name>
-        <rename/>
       </field>
       <field>
         <name>ticket_id</name>
-        <rename/>
+      </field>
+      <field>
+        <name>business_account_id</name>
+      </field>
+      <field>
+        <name>assistance_area_id</name>
+      </field>
+      <field>
+        <name>rate_id</name>
+      </field>
+      <field>
+        <name>tenant_id</name>
+      </field>
+      <field>
+        <name>farm_size</name>
       </field>
       <field>
         <name>status</name>
-        <rename/>
-      </field>
-      <field>
-        <name>_id_assistance_area</name>
-        <rename/>
-      </field>
-      <field>
-        <name>_id_business_account</name>
-        <rename>tenant_id</rename>
-      </field>
-      <field>
-        <name>rate</name>
-        <rename/>
-      </field>
-      <field>
-        <name>size</name>
-        <rename>farm_size</rename>
-      </field>
-      <field>
-        <name>_id_assistance_subarea</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -895,50 +925,8 @@ FROM dbo.d_ticket
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ticket_id</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>d_ticket</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>ticket_type</name>
-        <field>type</field>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>ticket_id</rename>
-        <default>0</default>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>288</yloc>
+      <xloc>744</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

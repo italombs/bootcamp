@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ticket_id</name>
+    <name>st_ticket_history</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,20 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/16 11:34:58.014</created_date>
+    <created_date>2022/04/19 23:28:31.787</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/16 11:34:58.014</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2022/04/19 23:28:31.787</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>Cloud DW</name>
+    <name>Cloud ST</name>
     <server>${cloud_server}</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>${cloud_db_dw}</database>
+    <database>${cloud_db_st}</database>
     <port>${cloud_port}</port>
     <username>${cloud_username}</username>
     <password>${cloud_password}</password>
@@ -496,44 +496,14 @@
   </connection>
   <order>
     <hop>
-      <from>De-serialize from file</from>
-      <to>input</to>
-      <enabled>N</enabled>
-    </hop>
-    <hop>
-      <from>Get rows from result</from>
-      <to>input</to>
+      <from>ticket_history</from>
+      <to>ticket_history_st</to>
       <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>input</from>
-      <to>ticket_id</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>d_ticket</from>
-      <to>ticket_id</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ticket_id</from>
-      <to>remove_lkp</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>remove_lkp</from>
-      <to>Copy rows to result</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>remove_lkp</from>
-      <to>Serialize to file</to>
-      <enabled>N</enabled>
     </hop>
   </order>
   <step>
-    <name>Copy rows to result</name>
-    <type>RowsToResult</type>
+    <name>ticket_history</name>
+    <type>MongoDbInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -542,6 +512,63 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <hostname>${mongo_server}</hostname>
+    <port>${mongo_port}</port>
+    <use_all_replica_members>N</use_all_replica_members>
+    <db_name>bootcamp</db_name>
+    <fields_name/>
+    <collection>ticket_history</collection>
+    <json_field_name>json</json_field_name>
+    <json_query/>
+    <auth_database>admin</auth_database>
+    <auth_user>${mongo_username}</auth_user>
+    <auth_password>${mongo_password}</auth_password>
+    <auth_mech>SCRAM-SHA-1</auth_mech>
+    <auth_kerberos>N</auth_kerberos>
+    <connect_timeout/>
+    <socket_timeout/>
+    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
+    <read_preference>primary</read_preference>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <execute_for_each_row>N</execute_for_each_row>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>_id</field_name>
+        <field_path>$._id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>ticket_id</field_name>
+        <field_path>$.ticket_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>from_user_id</field_name>
+        <field_path>$.from_user_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>to_user_id</field_name>
+        <field_path>$.to_user_id</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>timestamp</field_name>
+        <field_path>$.timestamp</field_path>
+        <field_type>Date</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>text</field_name>
+        <field_path>$.text</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>serial</field_name>
+        <field_path>$.serial</field_path>
+        <field_type>Integer</field_type>
+      </mongo_field>
+    </mongo_fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -551,14 +578,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>856</xloc>
-      <yloc>288</yloc>
+      <xloc>144</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>De-serialize from file</name>
-    <type>CubeInput</type>
+    <name>ticket_history_st</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -567,324 +594,52 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <file>
-      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_farmer_assistance.cube</name>
-    </file>
-    <limit>0</limit>
-    <addfilenameresult>N</addfilenameresult>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Get rows from result</name>
-    <type>RowsFromResult</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Serialize to file</name>
-    <type>CubeOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <file>
-      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_ticket_assistance.cube</name>
-      <add_to_result_filenames>N</add_to_result_filenames>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-    </file>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>848</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>d_ticket</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>Cloud DW</connection>
-    <sql>SELECT
-  id
-, type
-, version
-, date_from
-, date_to
-FROM dbo.d_ticket
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>id</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>id</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>type</name>
-        <length>64</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>type</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>version</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>version</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>date_from</name>
-        <length>3</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>date_from</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>date_to</name>
-        <length>3</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>date_to</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>input</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>remove_lkp</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
+    <connection>Cloud ST</connection>
+    <schema/>
+    <table>ticket_history</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <name>local_date</name>
-        <rename/>
+        <column_name>_id_ticket_history</column_name>
+        <stream_name>_id</stream_name>
       </field>
       <field>
-        <name>farm_id</name>
-        <rename/>
+        <column_name>_id_ticket</column_name>
+        <stream_name>ticket_id</stream_name>
       </field>
       <field>
-        <name>consultant_id</name>
-        <rename/>
+        <column_name>_id_from_user</column_name>
+        <stream_name>from_user_id</stream_name>
       </field>
       <field>
-        <name>farmer_id</name>
-        <rename/>
+        <column_name>_id_to_user</column_name>
+        <stream_name>to_user_id</stream_name>
       </field>
       <field>
-        <name>cod_ticket</name>
-        <rename/>
+        <column_name>timestamp</column_name>
+        <stream_name>timestamp</stream_name>
       </field>
       <field>
-        <name>ticket_id</name>
-        <rename/>
+        <column_name>text</column_name>
+        <stream_name>text</stream_name>
       </field>
       <field>
-        <name>status</name>
-        <rename/>
+        <column_name>serial</column_name>
+        <stream_name>serial</stream_name>
       </field>
-      <field>
-        <name>_id_assistance_area</name>
-        <rename/>
-      </field>
-      <field>
-        <name>_id_business_account</name>
-        <rename>tenant_id</rename>
-      </field>
-      <field>
-        <name>rate</name>
-        <rename/>
-      </field>
-      <field>
-        <name>size</name>
-        <rename>farm_size</rename>
-      </field>
-      <field>
-        <name>_id_assistance_subarea</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -895,50 +650,8 @@ FROM dbo.d_ticket
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ticket_id</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>d_ticket</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>ticket_type</name>
-        <field>type</field>
-      </key>
-      <value>
-        <name>id</name>
-        <rename>ticket_id</rename>
-        <default>0</default>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>288</yloc>
+      <xloc>344</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

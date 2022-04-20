@@ -576,7 +576,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>560</xloc>
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
@@ -615,7 +615,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
+      <xloc>768</xloc>
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
@@ -654,7 +654,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>976</xloc>
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
@@ -693,8 +693,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
-      <yloc>528</yloc>
+      <xloc>1168</xloc>
+      <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -732,7 +732,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
+      <xloc>1168</xloc>
       <yloc>528</yloc>
       <attributes_kjc/>
     </entry>
@@ -771,7 +771,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>976</xloc>
       <yloc>528</yloc>
       <attributes_kjc/>
     </entry>
@@ -823,6 +823,84 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>144</xloc>
+      <yloc>528</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>rate_id</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/f_assistance/rate_id.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>768</xloc>
+      <yloc>528</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>farm_size_id</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/../../transformations/dw/f_assistance/farm_size_id.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>560</xloc>
       <yloc>528</yloc>
       <attributes_kjc/>
     </entry>
@@ -910,15 +988,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>assistance_area_id</from>
-      <to>f_assistance</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>f_assistance</from>
       <to>Success</to>
       <from_nr>0</from_nr>
@@ -944,6 +1013,33 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>assistance_area_id</from>
+      <to>rate_id</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>rate_id</from>
+      <to>farm_size_id</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>farm_size_id</from>
+      <to>f_assistance</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

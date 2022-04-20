@@ -523,7 +523,7 @@
       <schema_name/>
     </partitioning>
     <file>
-      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_assistance_area.cube</name>
+      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/_load_farm_size.cube</name>
     </file>
     <limit>0</limit>
     <addfilenameresult>N</addfilenameresult>
@@ -629,20 +629,20 @@
         <stream_name>assistance_area_id</stream_name>
       </field>
       <field>
-        <column_name>rate</column_name>
-        <stream_name>rate</stream_name>
+        <column_name>rate_id</column_name>
+        <stream_name>rate_id</stream_name>
       </field>
       <field>
         <column_name>tenant_id</column_name>
         <stream_name>tenant_id</stream_name>
       </field>
       <field>
-        <column_name>farm_size</column_name>
-        <stream_name>farm_size</stream_name>
+        <column_name>farm_size_id</column_name>
+        <stream_name>farm_size_id</stream_name>
       </field>
       <field>
-        <column_name>farm_size_name</column_name>
-        <stream_name>farm_size_name</stream_name>
+        <column_name>farm_size</column_name>
+        <stream_name>farm_size</stream_name>
       </field>
       <field>
         <column_name>status</column_name>
