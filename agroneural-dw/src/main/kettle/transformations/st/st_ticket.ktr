@@ -535,7 +535,13 @@
         },
         assistance_area_id: 1,
         assistance_subarea_id: 1,
-		rate: 1
+		rate: 1,
+        timestamp_close: {
+            $dateToString: {
+                format: '%Y-%m-%d',
+                date: '$timestamp_close'
+            }
+        }
     }
 }]</json_query>
     <auth_database>admin</auth_database>
@@ -600,6 +606,11 @@
         <field_name>rate</field_name>
         <field_path>$.rate</field_path>
         <field_type>Integer</field_type>
+      </mongo_field>
+      <mongo_field>
+        <field_name>timestamp_close</field_name>
+        <field_path>$.timestamp_close</field_path>
+        <field_type>String</field_type>
       </mongo_field>
     </mongo_fields>
     <attributes/>
@@ -684,6 +695,10 @@
       <field>
         <column_name>rate</column_name>
         <stream_name>rate</stream_name>
+      </field>
+      <field>
+        <column_name>timestamp_close</column_name>
+        <stream_name>timestamp_close</stream_name>
       </field>
     </fields>
     <attributes/>

@@ -884,6 +884,10 @@ FROM dbo.d_ticket
         <name>_id_assistance_subarea</name>
         <rename/>
       </field>
+      <field>
+        <name>timestamp_close</name>
+        <rename/>
+      </field>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>

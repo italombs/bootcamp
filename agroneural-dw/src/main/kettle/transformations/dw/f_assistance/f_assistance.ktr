@@ -648,6 +648,10 @@
         <column_name>status</column_name>
         <stream_name>status</stream_name>
       </field>
+      <field>
+        <column_name>close_data</column_name>
+        <stream_name>timestamp_close</stream_name>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>

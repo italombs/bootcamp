@@ -554,7 +554,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>688</xloc>
-      <yloc>112</yloc>
+      <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -618,7 +618,7 @@
       <to>Limpar ST</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -627,7 +627,7 @@
       <to>Check folder is empty</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -652,6 +652,15 @@
     <hop>
       <from>Delete files</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Carga DW</from>
+      <to>Check folder is empty</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -686,7 +695,7 @@ Limpar ST: Apaga toda a área do stage
 
 Delete files: Limpa folder dos dados armazenados para simulações</note>
       <xloc>640</xloc>
-      <yloc>48</yloc>
+      <yloc>32</yloc>
       <width>359</width>
       <heigth>375</heigth>
       <fontname>Segoe UI</fontname>
