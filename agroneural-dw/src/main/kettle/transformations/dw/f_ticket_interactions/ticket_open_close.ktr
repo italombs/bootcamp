@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ticket</name>
+    <name>ticket_open_close</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,14 +427,73 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2022/04/15 18:11:08.580</created_date>
+    <created_date>2022/04/23 23:10:20.444</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2022/04/15 18:11:08.580</modified_date>
+    <modified_date>2022/04/23 23:10:20.444</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>Cloud DW</name>
+    <server>${cloud_server}</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>${cloud_db_dw}</database>
+    <port>${cloud_port}</port>
+    <username>${cloud_username}</username>
+    <password>${cloud_password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>${cloud_port}</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>Cloud ST</name>
     <server>${cloud_server}</server>
@@ -496,14 +555,39 @@
   </connection>
   <order>
     <hop>
-      <from>ticket</from>
-      <to>ticket_st</to>
+      <from>De-serialize from file</from>
+      <to>input</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get rows from result</from>
+      <to>input</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>input</from>
+      <to>dates</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>st_ticket</from>
+      <to>dates</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>dates</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>ticket_interactions</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>ticket</name>
-    <type>MongoDbInput</type>
+    <name>De-serialize from file</name>
+    <type>CubeInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -512,105 +596,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <hostname>${mongo_server}</hostname>
-    <port>${mongo_port}</port>
-    <use_all_replica_members>N</use_all_replica_members>
-    <db_name>bootcamp</db_name>
-    <fields_name/>
-    <collection>ticket</collection>
-    <json_field_name>json</json_field_name>
-    <json_query>[{
-    $project: {
-        _id: 1,
-        business_account_id: 1,
-        farmer_id: 1,
-        consultant_id: 1,
-        ticket_type: 1,
-        status: 1,
-        date: {
-            $dateToString: {
-                date: '$timestamp'
-            }
-        },
-        assistance_area_id: 1,
-        assistance_subarea_id: 1,
-		rate: 1,
-        timestamp_close: {
-            $dateToString: {
-                date: '$timestamp_close'
-            }
-        }
-    }
-}]</json_query>
-    <auth_database>admin</auth_database>
-    <auth_user>${mongo_username}</auth_user>
-    <auth_password>${mongo_password}</auth_password>
-    <auth_mech>SCRAM-SHA-1</auth_mech>
-    <auth_kerberos>N</auth_kerberos>
-    <connect_timeout/>
-    <socket_timeout/>
-    <use_ssl_socket_factory>Y</use_ssl_socket_factory>
-    <read_preference>primary</read_preference>
-    <output_json>N</output_json>
-    <query_is_pipeline>Y</query_is_pipeline>
-    <execute_for_each_row>N</execute_for_each_row>
-    <mongo_fields>
-      <mongo_field>
-        <field_name>date</field_name>
-        <field_path>$.date</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>ticket_type</field_name>
-        <field_path>$.ticket_type</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_area_id</field_name>
-        <field_path>$.assistance_area_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>farmer_id</field_name>
-        <field_path>$.farmer_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>consultant_id</field_name>
-        <field_path>$.consultant_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>business_account_id</field_name>
-        <field_path>$.business_account_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>_id</field_name>
-        <field_path>$._id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>assistance_subarea_id</field_name>
-        <field_path>$.assistance_subarea_id</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>status</field_name>
-        <field_path>$.status</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>rate</field_name>
-        <field_path>$.rate</field_path>
-        <field_type>Integer</field_type>
-      </mongo_field>
-      <mongo_field>
-        <field_name>timestamp_close</field_name>
-        <field_path>$.timestamp_close</field_path>
-        <field_type>String</field_type>
-      </mongo_field>
-    </mongo_fields>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/../../../../resources/cubos/load_to_user_id.cube</name>
+    </file>
+    <limit>0</limit>
+    <addfilenameresult>N</addfilenameresult>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -620,14 +610,173 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
-      <yloc>112</yloc>
+      <xloc>144</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>ticket_st</name>
-    <type>TableOutput</type>
+    <name>Get rows from result</name>
+    <type>RowsFromResult</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>_id_ticket</name>
+        <rename>cod_ticket</rename>
+      </field>
+      <field>
+        <name>from_user_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>from_user_profile</name>
+        <rename/>
+      </field>
+      <field>
+        <name>to_user_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>user_profile_name</name>
+        <rename>to_user_profile</rename>
+      </field>
+      <field>
+        <name>open_date</name>
+        <rename/>
+      </field>
+      <field>
+        <name>close_date</name>
+        <rename/>
+      </field>
+      <field>
+        <name>timestamp</name>
+        <rename>interactions_date</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>dates</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>st_ticket</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>_id_ticket</name>
+        <field>_id_ticket</field>
+      </key>
+      <value>
+        <name>date</name>
+        <rename>open_date</rename>
+        <default/>
+        <type>Date</type>
+      </value>
+      <value>
+        <name>timestamp_close</name>
+        <rename>close_date</rename>
+        <default/>
+        <type>Date</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>input</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>st_ticket</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -637,8 +786,117 @@
       <schema_name/>
     </partitioning>
     <connection>Cloud ST</connection>
+    <sql>SELECT
+  _id_ticket
+, "date"
+, timestamp_close
+FROM dbo.ticket
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>_id_ticket</name>
+        <length>100</length>
+        <precision>-1</precision>
+        <origin>st_ticket</origin>
+        <comments>_id_ticket</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
+        <storagetype>normal</storagetype>
+        <name>date</name>
+        <length>3</length>
+        <precision>-1</precision>
+        <origin>st_ticket</origin>
+        <comments>date</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
+        <storagetype>normal</storagetype>
+        <name>timestamp_close</name>
+        <length>3</length>
+        <precision>-1</precision>
+        <origin>st_ticket</origin>
+        <comments>timestamp_close</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ticket_interactions</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Cloud DW</connection>
     <schema/>
-    <table>ticket</table>
+    <table>ticket_interactions</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -655,48 +913,36 @@
     <return_field/>
     <fields>
       <field>
-        <column_name>_id_ticket</column_name>
-        <stream_name>_id</stream_name>
+        <column_name>cod_ticket</column_name>
+        <stream_name>cod_ticket</stream_name>
       </field>
       <field>
-        <column_name>date</column_name>
-        <stream_name>date</stream_name>
+        <column_name>from_user_id</column_name>
+        <stream_name>from_user_id</stream_name>
       </field>
       <field>
-        <column_name>ticket_type</column_name>
-        <stream_name>ticket_type</stream_name>
+        <column_name>from_user_profile</column_name>
+        <stream_name>from_user_profile</stream_name>
       </field>
       <field>
-        <column_name>status</column_name>
-        <stream_name>status</stream_name>
+        <column_name>to_user_id</column_name>
+        <stream_name>to_user_id</stream_name>
       </field>
       <field>
-        <column_name>_id_assistance_area</column_name>
-        <stream_name>assistance_area_id</stream_name>
+        <column_name>to_user_profile</column_name>
+        <stream_name>to_user_profile</stream_name>
       </field>
       <field>
-        <column_name>_id_assistance_subarea</column_name>
-        <stream_name>assistance_subarea_id</stream_name>
+        <column_name>open_date</column_name>
+        <stream_name>open_date</stream_name>
       </field>
       <field>
-        <column_name>_id_farmer</column_name>
-        <stream_name>farmer_id</stream_name>
+        <column_name>close_date</column_name>
+        <stream_name>close_date</stream_name>
       </field>
       <field>
-        <column_name>_id_consultant</column_name>
-        <stream_name>consultant_id</stream_name>
-      </field>
-      <field>
-        <column_name>_id_business_account</column_name>
-        <stream_name>business_account_id</stream_name>
-      </field>
-      <field>
-        <column_name>rate</column_name>
-        <stream_name>rate</stream_name>
-      </field>
-      <field>
-        <column_name>timestamp_close</column_name>
-        <stream_name>timestamp_close</stream_name>
+        <column_name>interactions_date</column_name>
+        <stream_name>interactions_date</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -708,8 +954,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>328</xloc>
-      <yloc>112</yloc>
+      <xloc>904</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
